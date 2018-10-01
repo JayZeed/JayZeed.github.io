@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-01T13:13:00.889Z</updated>
+  <updated>2018-10-01T15:33:17.672Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,23 +18,25 @@
   
   <entry>
     <title>Hexo配置文件 subtile和description内容如何换行</title>
-    <link href="http://yoursite.com/2018/09/27/Hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20subtile%E5%92%8Cdescription%E5%86%85%E5%AE%B9%E5%A6%82%E4%BD%95%E6%8D%A2%E8%A1%8C/"/>
-    <id>http://yoursite.com/2018/09/27/Hexo配置文件 subtile和description内容如何换行/</id>
-    <published>2018-09-26T17:01:47.397Z</published>
-    <updated>2018-10-01T13:13:00.889Z</updated>
+    <link href="http://yoursite.com/2018/10/01/Hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20subtile%E5%92%8Cdescription%E5%86%85%E5%AE%B9%E5%A6%82%E4%BD%95%E6%8D%A2%E8%A1%8C/"/>
+    <id>http://yoursite.com/2018/10/01/Hexo配置文件 subtile和description内容如何换行/</id>
+    <published>2018-10-01T14:59:22.000Z</published>
+    <updated>2018-10-01T15:33:17.672Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="使用-lt-br-实现换行"><a href="#使用-lt-br-实现换行" class="headerlink" title="使用&lt;br>实现换行"></a>使用&lt;br>实现换行</h2><pre><code># Sitetitle: JJ❤22subtitle:description: QQ:339003672&lt;br&gt;WeChat:Zhang_junj #分行keywords:author: JJZhanglanguage: zh-Hanstimezone:</code></pre><p>直接在换行位置加入<strong>&lt;br></strong>即可。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="使用-lt-br-实现换行"><a href="#使用-lt-br-实现换行" class="headerlink" title="使用&lt;br>实现换行"></a>使用&lt;br>实现换行</h2><a id="more"></a> <pre><code># Sitetitle: JJ❤22subtitle:description: QQ:339003672&lt;br&gt;WeChat:Zhang_junj #分行keywords:author: JJZhanglanguage: zh-Hanstimezone:</code></pre><p>直接在换行位置加入<strong>&lt;br></strong>即可。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;使用-lt-br-实现换行&quot;&gt;&lt;a href=&quot;#使用-lt-br-实现换行&quot; class=&quot;headerlink&quot; title=&quot;使用&amp;lt;br&gt;实现换行&quot;&gt;&lt;/a&gt;使用&amp;lt;br&gt;实现换行&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;# Site
-title: JJ❤2
-      
+      &lt;h2 id=&quot;使用-lt-br-实现换行&quot;&gt;&lt;a href=&quot;#使用-lt-br-实现换行&quot; class=&quot;headerlink&quot; title=&quot;使用&amp;lt;br&gt;实现换行&quot;&gt;&lt;/a&gt;使用&amp;lt;br&gt;实现换行&lt;/h2&gt;
     
     </summary>
     
+      <category term="Hexo静态博客" scheme="http://yoursite.com/categories/Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
