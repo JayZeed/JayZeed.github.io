@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo Next主题如何添加打赏功能]]></title>
+    <url>%2F2018%2F10%2F03%2FHexo%20Next%E4%B8%BB%E9%A2%98%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[最近搭建博客时想要添加个打赏功能，虽然好像一般也没人打赏= = 但是咱们是那种见钱眼开的人么？不是！所以————咱们还是添加一个吧！ 在网上查了些资料，有的方法试了发现没成功，可能因为主题不一样的原因，由于我使用的Next主题，所以先把Next主题下的添加打赏方法写出来。 基于Next主题1.准备支付宝和微信二维码&ensp;&ensp;首先得准备支付宝和微信的收款二维码（直接打开相应软件，到收款功能处保存二维码即可），然后将对应图片放在next\source\images路径下，并命名为wechatpay.jpg和alipay.jpg（文件名称随意，不过后面会用到，当然你用PNG格式也是可以的） 2.在_config.yml中添加图片路径&ensp;&ensp;注意此处_config.yml是主题配置文件，不要弄错了。打开后找到如下属性,并配置路径: **reward_comment:** 坚持原创技术分享，您的支持将鼓励我继续创作！ **wechatpay:** /images/wechatpay.jpg **alipay:** /images/alipay.jpg 3.修复闪动bug修改next/source/css/_common/components/post/post-reward.styl，注释wechat:hover和alipay:hover /* 注释文字闪动函数 #wechat:hover p{ animation: roll 0.1s infinite linear; -webkit-animation: roll 0.1s infinite linear; -moz-animation: roll 0.1s infinite linear; } #alipay:hover p{ animation: roll 0.1s infinite linear; -webkit-animation: roll 0.1s infinite linear; -moz-animation: roll 0.1s infinite linear; } */ 4.效果 基于其他主题其他主题的我没有尝试，此处转载一个链接，里面有关于打赏实现的方法，希望能有帮助：https://blog.csdn.net/l_201607/article/details/81097278]]></content>
+      <categories>
+        <category>Hexo静态博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数据结构的广义定义和狭义定义]]></title>
     <url>%2F2018%2F10%2F03%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E5%B9%BF%E4%B9%89%E5%AE%9A%E4%B9%89%E5%92%8C%E7%8B%AD%E4%B9%89%E5%AE%9A%E4%B9%89%2F</url>
     <content type="text"><![CDATA[最近看了关于数据结构的课程，打算重温一下数据结构的知识，正好又新搭建了个人博客，打算把学习过程中的一些知识点记录下来，方便以后温习。 广义定义指一组数据结构的存储结构。算法就是操作数据的一组方法。 狭义定义指某些著名的数据结构和算法，如队列、栈、堆、二分查找、动态规划等。]]></content>
@@ -20,7 +32,7 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>博客</tag>
+        <tag>个人博客</tag>
       </tags>
   </entry>
 </search>

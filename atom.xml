@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-03T08:35:50.430Z</updated>
+  <updated>2018-10-03T13:14:51.779Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo Next主题如何添加打赏功能</title>
+    <link href="http://yoursite.com/2018/10/03/Hexo%20Next%E4%B8%BB%E9%A2%98%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD/"/>
+    <id>http://yoursite.com/2018/10/03/Hexo Next主题如何添加打赏功能/</id>
+    <published>2018-10-03T12:16:19.735Z</published>
+    <updated>2018-10-03T13:14:51.779Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近搭建博客时想要添加个打赏功能，虽然好像一般也没人打赏= = 但是咱们是那种见钱眼开的人么？不是！所以————<br>咱们还是添加一个吧！<br><a id="more"></a></p><hr><p>在网上查了些资料，有的方法试了发现没成功，可能因为主题不一样的原因，由于我使用的Next主题，所以先把Next主题下的添加打赏方法写出来。</p><h2 id="基于Next主题"><a href="#基于Next主题" class="headerlink" title="基于Next主题"></a>基于Next主题</h2><h3 id="1-准备支付宝和微信二维码"><a href="#1-准备支付宝和微信二维码" class="headerlink" title="1.准备支付宝和微信二维码"></a>1.准备支付宝和微信二维码</h3><p>&ensp;&ensp;首先得准备支付宝和微信的收款二维码（直接打开相应软件，到收款功能处保存二维码即可），然后将对应图片放在<strong>next\source\images</strong>路径下，并命名为<strong>wechatpay.jpg</strong>和<strong>alipay.jpg</strong>（文件名称随意，不过后面会用到，当然你用PNG格式也是可以的）</p><h3 id="2-在-config-yml中添加图片路径"><a href="#2-在-config-yml中添加图片路径" class="headerlink" title="2.在_config.yml中添加图片路径"></a>2.在_config.yml中添加图片路径</h3><p>&ensp;&ensp;注意此处<strong>_config.yml</strong>是<strong>主题配置文件</strong>，不要弄错了。打开后找到如下属性,并配置路径:</p><pre><code>**reward_comment:** 坚持原创技术分享，您的支持将鼓励我继续创作！**wechatpay:** /images/wechatpay.jpg**alipay:** /images/alipay.jpg</code></pre><h3 id="3-修复闪动bug"><a href="#3-修复闪动bug" class="headerlink" title="3.修复闪动bug"></a>3.修复闪动bug</h3><p>修改next/source/css/_common/components/post/post-reward.styl，注释wechat:hover和alipay:hover</p><pre><code>/* 注释文字闪动函数#wechat:hover p{animation: roll 0.1s infinite linear;-webkit-animation: roll 0.1s infinite linear;-moz-animation: roll 0.1s infinite linear;}#alipay:hover p{animation: roll 0.1s infinite linear;-webkit-animation: roll 0.1s infinite linear;-moz-animation: roll 0.1s infinite linear;}*/ </code></pre><h3 id="4-效果"><a href="#4-效果" class="headerlink" title="4.效果"></a>4.效果</h3><p><img src="/uploads/donate.jpg" alt="打赏"></p><h2 id="基于其他主题"><a href="#基于其他主题" class="headerlink" title="基于其他主题"></a>基于其他主题</h2><p>其他主题的我没有尝试，此处转载一个链接，里面有关于打赏实现的方法，希望能有帮助：<a href="https://blog.csdn.net/l_201607/article/details/81097278" target="_blank" rel="noopener">https://blog.csdn.net/l_201607/article/details/81097278</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近搭建博客时想要添加个打赏功能，虽然好像一般也没人打赏= = 但是咱们是那种见钱眼开的人么？不是！所以————&lt;br&gt;咱们还是添加一个吧！&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo静态博客" scheme="http://yoursite.com/categories/Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Next" scheme="http://yoursite.com/tags/Next/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构的广义定义和狭义定义</title>
@@ -43,7 +67,7 @@
     <link href="http://yoursite.com/2018/10/01/Hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20subtile%E5%92%8Cdescription%E5%86%85%E5%AE%B9%E5%A6%82%E4%BD%95%E6%8D%A2%E8%A1%8C/"/>
     <id>http://yoursite.com/2018/10/01/Hexo配置文件 subtile和description内容如何换行/</id>
     <published>2018-10-01T14:59:22.000Z</published>
-    <updated>2018-10-03T08:46:42.983Z</updated>
+    <updated>2018-10-03T12:19:19.522Z</updated>
     
     <content type="html"><![CDATA[<p>配置Hexo个人博客时，站点配置文件<strong>_config.yml</strong>中个人信息可能需要换行，此时只需要在换行位置加上换行符即可。具体方法如下：<br><a id="more"></a> </p><h2 id="使用-lt-br-实现换行"><a href="#使用-lt-br-实现换行" class="headerlink" title="使用&lt;br>实现换行"></a>使用&lt;br>实现换行</h2><pre><code># Sitetitle: JJ❤22subtitle:description: QQ:339003672&lt;br&gt;WeChat:Zhang_junj #分行keywords:author: JJZhanglanguage: zh-Hanstimezone:</code></pre><p>直接在换行位置加入<strong>&lt;br></strong>即可。</p>]]></content>
     
@@ -58,7 +82,7 @@
     
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="个人博客" scheme="http://yoursite.com/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
