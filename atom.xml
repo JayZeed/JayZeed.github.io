@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-01T15:33:17.672Z</updated>
+  <updated>2018-10-03T08:35:50.430Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,17 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数据结构的广义定义和狭义定义</title>
+    <link href="http://yoursite.com/2018/10/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E5%B9%BF%E4%B9%89%E5%AE%9A%E4%B9%89%E5%92%8C%E7%8B%AD%E4%B9%89%E5%AE%9A%E4%B9%89/"/>
+    <id>http://yoursite.com/2018/10/03/数据结构的广义定义和狭义定义/</id>
+    <published>2018-10-03T08:24:22.000Z</published>
+    <updated>2018-10-03T08:35:50.430Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近看了关于数据结构的课程，打算重温一下数据结构的知识，正好又新搭建了个人博客，打算把学习过程中的一些知识点记录下来，方便以后温习。<br><a id="more"></a> </p><h2 id="广义定义"><a href="#广义定义" class="headerlink" title="广义定义"></a>广义定义</h2><p>指一组数据结构的存储结构。算法就是操作数据的一组方法。</p><h2 id="狭义定义"><a href="#狭义定义" class="headerlink" title="狭义定义"></a>狭义定义</h2><p>指某些著名的数据结构和算法，如队列、栈、堆、二分查找、动态规划等。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近看了关于数据结构的课程，打算重温一下数据结构的知识，正好又新搭建了个人博客，打算把学习过程中的一些知识点记录下来，方便以后温习。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo配置文件 subtile和description内容如何换行</title>
     <link href="http://yoursite.com/2018/10/01/Hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20subtile%E5%92%8Cdescription%E5%86%85%E5%AE%B9%E5%A6%82%E4%BD%95%E6%8D%A2%E8%A1%8C/"/>
     <id>http://yoursite.com/2018/10/01/Hexo配置文件 subtile和description内容如何换行/</id>
     <published>2018-10-01T14:59:22.000Z</published>
-    <updated>2018-10-01T15:33:17.672Z</updated>
+    <updated>2018-10-03T08:46:42.983Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="使用-lt-br-实现换行"><a href="#使用-lt-br-实现换行" class="headerlink" title="使用&lt;br>实现换行"></a>使用&lt;br>实现换行</h2><a id="more"></a> <pre><code># Sitetitle: JJ❤22subtitle:description: QQ:339003672&lt;br&gt;WeChat:Zhang_junj #分行keywords:author: JJZhanglanguage: zh-Hanstimezone:</code></pre><p>直接在换行位置加入<strong>&lt;br></strong>即可。</p>]]></content>
+    <content type="html"><![CDATA[<p>配置Hexo个人博客时，站点配置文件<strong>_config.yml</strong>中个人信息可能需要换行，此时只需要在换行位置加上换行符即可。具体方法如下：<br><a id="more"></a> </p><h2 id="使用-lt-br-实现换行"><a href="#使用-lt-br-实现换行" class="headerlink" title="使用&lt;br>实现换行"></a>使用&lt;br>实现换行</h2><pre><code># Sitetitle: JJ❤22subtitle:description: QQ:339003672&lt;br&gt;WeChat:Zhang_junj #分行keywords:author: JJZhanglanguage: zh-Hanstimezone:</code></pre><p>直接在换行位置加入<strong>&lt;br></strong>即可。</p>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;使用-lt-br-实现换行&quot;&gt;&lt;a href=&quot;#使用-lt-br-实现换行&quot; class=&quot;headerlink&quot; title=&quot;使用&amp;lt;br&gt;实现换行&quot;&gt;&lt;/a&gt;使用&amp;lt;br&gt;实现换行&lt;/h2&gt;
+      &lt;p&gt;配置Hexo个人博客时，站点配置文件&lt;strong&gt;_config.yml&lt;/strong&gt;中个人信息可能需要换行，此时只需要在换行位置加上换行符即可。具体方法如下：&lt;br&gt;
     
     </summary>
     
