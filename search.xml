@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据结构之数组]]></title>
+    <url>%2F2018%2F10%2F09%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E6%95%B0%E7%BB%84%2F</url>
+    <content type="text"><![CDATA[什么是数组数组(Array)是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据。 线性表 就是数据排成像一条线一样的结构，每个线性表上的数据最多只有前和后两个方向，除了数组，链表、队列、栈等也是线性表结构（ 线性表是一种逻辑结构，而顺序表、链表等是存储结构 ）。 非线性表 如二叉树、堆、图等，数据之间并不是简单的前后关系。 误区数组和链表的区别大多数会说链表适合插入、删除，时间复杂度为O(1)；数组适合查找，查找时间复杂度为O(1)。这是不准确的！ 数组适合查找，但是查找的时间复杂度并不是O(1)，即便是排序好的数组，用二分查找，时间复杂度也是O(log n)。所以正确的表述是，数组支持随机访问，根据下标随机访问的时间复杂度为O(1)。 低效的插入和删除数组为了保持内存数据连续性，会导致插入、删除操作比较低效。 插入 如果在数组的末尾插入元素，那就不需要移动数据了，这时的时间复杂度为 O(1)。但如果在数组的开头插入元素，那所有的数据都需要依次往后移动一位，所以最坏时间复杂度是 O(n)。因为我们在每个位置插入元素的概率是一样的，所以平均情况时间复杂度为 (1+2+…n)/n=O(n)。 如果数组中的数据是有序的，我们在某个位置插入一个新的元素时，就必须按照刚才的方法搬移 k 之后的数据。但是，如果数组中存储的数据并没有任何规律，数组只是被当作一个存储数据的集合，如果要将某个数组插入到第 k 个位置，为了避免大规模的数据搬移，直接将第 k 位的数据搬移到数组元素的最后，把新的元素直接放入第K个位置。在特定场景下，在第 k 个位置插入一个元素的时间复杂度就会降为O(1)。 删除 如果删除数组末尾的数据，则最好情况时间复杂度为 O(1)；如果删除开头的数据，则最坏情况时间复杂度为 O(n)；在某些特殊场景下，我们并不一定非得追求数组中数据的连续性。我们可以将多次删除操作集中在一起执行。比如可以先记录下已经删除的数据，每次的删除操作并不是真正地搬移数据，只是记录数据已经被删除。当数组没有更多空间存储数据时，我们再触发执行一次真正的删除操作，从而可以大大减少删除操作导致的数据搬移。JVM标记清除垃圾回收算法就用了类似的思想。 为什么大多数编程语言中，数组从0开始编号？从数组的存储结构来看，下标准确说就是偏移。如果下标从0开始，那么$$a[k]_address = base_address + k type_size$$若下标从1开始，则会变成$$a[k]_address = base_address + (k-1) type_size$$那么每次随机访问数组元素时就多了一次减法运算，对于CPU来说，就是多了一次减法指令。 数组作为基础的数据结构，通过下标随机访问又是非常基础的操作，效率的优化就需要尽可能做到极致，所以选择了从0开始编号。另一方面，从历史角度来看，由于C语言设计用0作为数组下标，而后的java、javaScript等高级语言都是效仿了C语言，也为了减少C语言程序员学习java的学习成本。但比如Matlab就不是从0开始，Python支持负数下标。 使用容器还是数组？比如C++的vector或者Java的ArrayList等属于容器类，一般来说容器类相比数组会消耗一定的性能。不过对于业务开发，直接用容器类就够了，比较省时省力，但如果是底层开发，性能需要尽量优化，则数组可能更好。]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[两数之和]]></title>
     <url>%2F2018%2F10%2F08%2F%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%2F</url>
     <content type="text"><![CDATA[题目（简单）给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。示例:给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1] 解决方案我的解法class Solution { public int[] twoSum(int[] nums, int target) { for(int i=0;i&lt;nums.length;++i) { int T = target - nums[i]; for(int j=i+1;j&lt;nums.length;++j) { if(nums[j] == T) return new int[]{i, j}; //不需要提前申请，直接可以返回 } } throw new IllegalArgumentException(&quot;No two sum solution&quot;); //抛出错误 } } 1.暴力解法暴力法很简单。遍历每个元素 xx，并查找是否存在一个值与 target - xtarget−x 相等的目标元素。 public int[] twoSum(int[] nums, int target) { for (int i = 0; i &lt; nums.length; i++) { for (int j = i + 1; j &lt; nums.length; j++) { if (nums[j] == target - nums[i]) { return new int[] { i, j }; } } } throw new IllegalArgumentException(“No two sum solution”);} 复杂度分析 时间复杂度：O(n2)，对于每个元素，我们试图通过遍历数组的其余部分来寻找它所对应的目标元素，这将耗费O(n)的时间。因此时间复杂度为 O(n2)。 空间复杂度：O(1)。 2.两遍哈希表为了对运行时间复杂度进行优化，我们需要一种更有效的方法来检查数组中是否存在目标元素。如果存在，我们需要找出它的索引。保持数组中的每个元素与其索引相互对应的最好方法是什么？哈希表。通过以空间换取速度的方式，我们可以将查找时间从O(n)降低到O(1)。哈希表正是为此目的而构建的，它支持以近似恒定的时间进行快速查找。我用“近似”来描述，是因为一旦出现冲突，查找用时可能会退化到O(n)。但只要你仔细地挑选哈希函数，在哈希表中进行查找的用时应当被摊销为O(1)。一个简单的实现使用了两次迭代。在第一次迭代中，我们将每个元素的值和它的索引添加到表中。然后，在第二次迭代中，我们将检查每个元素所对应的目标元素（target - nums[i]）是否存在于表中。注意，该目标元素不能是nums[i]本身！ public int[] twoSum(int[] nums, int target) { Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;(); for (int i = 0; i &lt; nums.length; i++) { map.put(nums[i], i); } for (int i = 0; i &lt; nums.length; i++) { int complement = target - nums[i]; if (map.containsKey(complement) &amp;&amp; map.get(complement) != i) { //containsKey方法判断Map集合对象中是否包含指定的键名。如果Map集合中包含指定的键名，则返回true，否则返回false return new int[] { i, map.get(complement) }; } } throw new IllegalArgumentException(“No two sum solution”);} 复杂度分析 时间复杂度：O(n)，我们把包含有n个元素的列表遍历两次。由于哈希表将查找时间缩短到O(1) ，所以时间复杂度为O(n)。 空间复杂度：O(n)，所需的额外空间取决于哈希表中存储的元素数量，该表中存储了n个元素。 3.一遍哈希表事实证明，我们可以一次完成。在进行迭代并将元素插入到表中的同时，我们还会回过头来检查表中是否已经存在当前元素所对应的目标元素。如果它存在，那我们已经找到了对应解，并立即将其返回。 public int[] twoSum(int[] nums, int target) { Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;(); for (int i = 0; i &lt; nums.length; i++) { int complement = target - nums[i]; if (map.containsKey(complement)) { return new int[] { map.get(complement), i }; } map.put(nums[i], i); } throw new IllegalArgumentException(“No two sum solution”);} 复杂度分析 时间复杂度：O(n)，我们只遍历了包含有n个元素的列表一次。在表中进行的每次查找只花费O(1)的时间。 空间复杂度：O(n)，所需的额外空间取决于哈希表中存储的元素数量，该表最多需要存储n个元素。]]></content>
@@ -26,7 +37,7 @@
   <entry>
     <title><![CDATA[数据结构的广义定义和狭义定义]]></title>
     <url>%2F2018%2F10%2F03%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E5%B9%BF%E4%B9%89%E5%AE%9A%E4%B9%89%E5%92%8C%E7%8B%AD%E4%B9%89%E5%AE%9A%E4%B9%89%2F</url>
-    <content type="text"><![CDATA[最近看了关于数据结构的课程，打算重温一下数据结构的知识，正好又新搭建了个人博客，打算把学习过程中的一些知识点记录下来，方便以后温习。 广义定义指一组数据结构的存储结构。算法就是操作数据的一组方法。 狭义定义指某些著名的数据结构和算法，如队列、栈、堆、二分查找、动态规划等。]]></content>
+    <content type="text"><![CDATA[最近看了关于数据结构的课程，打算重温一下数据结构的知识，正好又新搭建了个人博客，打算把学习过程中的一些知识点记录下来，方便以后温习。部分内容是直接copy的课程内容，如有侵权，请联系博主删除。 广义定义指一组数据结构的存储结构。算法就是操作数据的一组方法。 狭义定义指某些著名的数据结构和算法，如队列、栈、堆、二分查找、动态规划等。]]></content>
       <categories>
         <category>数据结构</category>
       </categories>
