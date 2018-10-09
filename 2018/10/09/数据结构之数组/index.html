@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="JJ❤22">
 <meta property="og:description" content="什么是数组数组(Array)是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T16:09:47.490Z">
+<meta property="og:updated_time" content="2018-10-09T16:32:59.870Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构之数组">
 <meta name="twitter:description" content="什么是数组数组(Array)是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据。">
@@ -437,7 +437,7 @@
 <p>那么每次随机访问数组元素时就多了一次减法运算，对于CPU来说，就是多了一次减法指令。</p>
 <p>数组作为基础的数据结构，通过下标随机访问又是非常基础的操作，效率的优化就需要尽可能做到极致，所以选择了从0开始编号。另一方面，从历史角度来看，由于C语言设计用0作为数组下标，而后的java、javaScript等高级语言都是效仿了C语言，也为了减少C语言程序员学习java的学习成本。但比如Matlab就不是从0开始，Python支持负数下标。</p>
 <hr>
-<h2 id="使用容器还是数组"><a href="#使用容器还是数组" class="headerlink" title="使用容器还是数组"></a>使用容器还是数组</h2><p>比如C++的Vector或者Java的ArrayList等属于容器类，一般来说容器类相比数组会消耗一定的性能。不过对于业务开发，直接用容器类就够了，比较省时省力，但如果是底层开发，性能需要尽量优化，则数组可能更好。</p>
+<h2 id="使用容器还是数组"><a href="#使用容器还是数组" class="headerlink" title="使用容器还是数组"></a>使用容器还是数组</h2><p>比如C++的Vector或者Java的ArrayList等属于容器类，一般来说容器类相比数组会消耗一定的性能（比如动态扩容时往往是重新申请一个更大的空间，将数据拷贝进去，而拷贝操作十分耗时）。不过对于业务开发，直接用容器类就够了，比较省时省力，但如果是底层开发，性能需要尽量优化，则数组可能更好。</p>
 
       
     </div>
