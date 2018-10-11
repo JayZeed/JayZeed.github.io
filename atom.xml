@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-09T16:32:59.870Z</updated>
+  <updated>2018-10-11T15:47:24.417Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据结构之堆栈</title>
+    <link href="http://yoursite.com/2018/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%A0%86%E6%A0%88/"/>
+    <id>http://yoursite.com/2018/10/11/数据结构之堆栈/</id>
+    <published>2018-10-11T15:24:13.330Z</published>
+    <updated>2018-10-11T15:47:24.417Z</updated>
+    
+    <content type="html"><![CDATA[<p>关于堆栈的基础知识此处不做赘述。主要写一下今天学习数据结构的堆栈时看到的一个问题：</p><h2 id="JVM的堆栈和数据结构的堆栈一样么"><a href="#JVM的堆栈和数据结构的堆栈一样么" class="headerlink" title="JVM的堆栈和数据结构的堆栈一样么"></a>JVM的堆栈和数据结构的堆栈一样么</h2><a id="more"></a><p>第一反应肯定还是不一样的，但是具体为什么不一样好像也不知道个所以然。。于是上网查了查，此处引用一篇资料，希望有所帮助。</p><p>JVM中的stack和heap与数据结构中所说的stack和heap是一个概念吗-CSDN论坛<br><a href="https://bbs.csdn.net/topics/330120842​" target="_blank" rel="noopener">https://bbs.csdn.net/topics/330120842​</a></p><p><a href="https://blog.csdn.net/weixin_41856078/article/details/79725852" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41856078/article/details/79725852</a></p><p><strong>数据结构中的堆栈</strong>：是两种特殊的数据结构，都是对数据项按序排列的数据结构，对管理数据的一种手段和方法。可以用来存放数据和地址，栈只能在一端（栈顶）对数据项进行插入和删除。</p><p><strong>内存中的堆栈</strong>：是确切存在的物理结构，是用来存放不同数据的内存空间。内存中的栈，是由系统自动分配和释放的，是由高地址向低地址扩展的数据机构，是一段连续的内存区域，是对数据结构中的栈这种手段的实现。栈的顶地址和最大容量是系统预先设定好的，在程序编译时，它就是一个确定的常数，但注意并不是所有用到栈技术的区域都是栈区，虽然目前是这样，这是概念定义的准确性问题。 内存中堆，一般用来动态分配内存的，它的实现跟操作系统和编译器有关，一般内存中的堆貌似是用链表实现的。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关于堆栈的基础知识此处不做赘述。主要写一下今天学习数据结构的堆栈时看到的一个问题：&lt;/p&gt;
+&lt;h2 id=&quot;JVM的堆栈和数据结构的堆栈一样么&quot;&gt;&lt;a href=&quot;#JVM的堆栈和数据结构的堆栈一样么&quot; class=&quot;headerlink&quot; title=&quot;JVM的堆栈和数据结构的堆栈一样么&quot;&gt;&lt;/a&gt;JVM的堆栈和数据结构的堆栈一样么&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构之数组</title>
