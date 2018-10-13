@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-11T15:52:13.745Z</updated>
+  <updated>2018-10-13T17:20:27.730Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ActiveMQ安装</title>
+    <link href="http://yoursite.com/2018/10/14/ActiveMQ%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/2018/10/14/ActiveMQ安装/</id>
+    <published>2018-10-13T16:32:00.753Z</published>
+    <updated>2018-10-13T17:20:27.730Z</updated>
+    
+    <content type="html"><![CDATA[<p>ActiveMQ 是Apache出品，最流行的，能力强劲的开源消息总线。MQ: message queue, 顾名思义就是消息队列的意思。因而这个主要是关于消息交互和消息队列的。</p><a id="more"></a><h2 id="下载ActiveMQ"><a href="#下载ActiveMQ" class="headerlink" title="下载ActiveMQ"></a>下载ActiveMQ</h2><p>去官方网站下载：<a href="http://activemq.apache.org/" target="_blank" rel="noopener">http://activemq.apache.org/</a></p><p>下载之前注意查看版本对应的JDK要求，并在本机配置好；可以在官网release底下找到要求的最低版本，此处放出部分版本号。</p><table><thead><tr><th>MQ版本号</th><th>Build-Jdk</th><th>依赖JDK</th></tr></thead><tbody><tr><td>apache-activemq-5.11.0</td><td>1.7.0_60</td><td>1.7+</td></tr><tr><td>apache-activemq-5.12.0</td><td>1.7.0_80</td><td>1.7+</td></tr><tr><td>apache-activemq-5.13.0</td><td>1.7.0_80</td><td>1.7+</td></tr><tr><td>apache-activemq-5.14.0</td><td>1.7.0_80</td><td>1.7+</td></tr><tr><td>apache-activemq-5.15.0</td><td>1.8.0_112</td><td>1.8+</td></tr></tbody></table><h2 id="运行ActiveMQ"><a href="#运行ActiveMQ" class="headerlink" title="运行ActiveMQ"></a>运行ActiveMQ</h2><p>解压文件夹后进入bin目录，双击activemq.bat就可以启动ActiveMQ了</p><p><strong>此处我出现了一个问题</strong>，双击bat文件后出现控制台闪现后消失的现象，<strong>解决方案</strong>如下：</p><ol><li>windows系统，在bin文件夹下打开cmd命令行，输入 activemq-admin.bat start。  </li><li>大约是JDK版本问题，引起了闪退。</li></ol><p>我是使用了第一个方法解决的。</p><p>出错时显示如下：</p><p><img src="\uploads\ActiveMQ安装\ActiveMQ安装-1.png" alt="出错图"></p><p>解决后显示如下：</p><p><img src="\uploads\ActiveMQ安装\ActiveMQ安装-2.png" alt="解决图"></p><p>启动ActiveMQ以后，登陆：<a href="http://localhost:8161/admin/" target="_blank" rel="noopener">http://localhost:8161/admin/</a> ,账户和密码都是admin，正常显示如下：</p><p><img src="\uploads\ActiveMQ安装\ActiveMQ安装-3.png" alt="正常运行"></p><p>至此安装结束，可以创建queue了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ActiveMQ 是Apache出品，最流行的，能力强劲的开源消息总线。MQ: message queue, 顾名思义就是消息队列的意思。因而这个主要是关于消息交互和消息队列的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ActiveMQ" scheme="http://yoursite.com/categories/ActiveMQ/"/>
+    
+    
+      <category term="ActiveMQ" scheme="http://yoursite.com/tags/ActiveMQ/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构之堆栈</title>

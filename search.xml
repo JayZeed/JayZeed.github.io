@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ActiveMQ安装]]></title>
+    <url>%2F2018%2F10%2F14%2FActiveMQ%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[ActiveMQ 是Apache出品，最流行的，能力强劲的开源消息总线。MQ: message queue, 顾名思义就是消息队列的意思。因而这个主要是关于消息交互和消息队列的。 下载ActiveMQ去官方网站下载：http://activemq.apache.org/ 下载之前注意查看版本对应的JDK要求，并在本机配置好；可以在官网release底下找到要求的最低版本，此处放出部分版本号。 MQ版本号 Build-Jdk 依赖JDK apache-activemq-5.11.0 1.7.0_60 1.7+ apache-activemq-5.12.0 1.7.0_80 1.7+ apache-activemq-5.13.0 1.7.0_80 1.7+ apache-activemq-5.14.0 1.7.0_80 1.7+ apache-activemq-5.15.0 1.8.0_112 1.8+ 运行ActiveMQ解压文件夹后进入bin目录，双击activemq.bat就可以启动ActiveMQ了 此处我出现了一个问题，双击bat文件后出现控制台闪现后消失的现象，解决方案如下： windows系统，在bin文件夹下打开cmd命令行，输入 activemq-admin.bat start。 大约是JDK版本问题，引起了闪退。 我是使用了第一个方法解决的。 出错时显示如下： 解决后显示如下： 启动ActiveMQ以后，登陆：http://localhost:8161/admin/ ,账户和密码都是admin，正常显示如下： 至此安装结束，可以创建queue了。]]></content>
+      <categories>
+        <category>ActiveMQ</category>
+      </categories>
+      <tags>
+        <tag>ActiveMQ</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数据结构之堆栈]]></title>
     <url>%2F2018%2F10%2F11%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%A0%86%E6%A0%88%2F</url>
     <content type="text"><![CDATA[关于堆栈的基础知识此处不做赘述。主要写一下今天学习数据结构的堆栈时看到的一个问题： JVM的堆栈和数据结构的堆栈一样么第一反应肯定还是不一样的，但是具体为什么不一样好像也不知道个所以然。。于是上网查了查，此处引用一篇资料，希望有所帮助。 JVM中的stack和heap与数据结构中所说的stack和heap是一个概念吗-CSDN论坛https://bbs.csdn.net/topics/330120842 https://blog.csdn.net/weixin_41856078/article/details/79725852 JVM中的stack和heap的实现方法与特性和普通的数据结构是一样，概念上应该是一致的。只是实现层次不同，实现方式上肯定比一般的实现要复杂点，只是对外的操作肯定一致。 数据结构中的堆栈：是两种特殊的数据结构，都是对数据项按序排列的数据结构，对管理数据的一种手段和方法。可以用来存放数据和地址，栈只能在一端（栈顶）对数据项进行插入和删除。 内存中的堆栈：是确切存在的物理结构，是用来存放不同数据的内存空间。内存中的栈，是由系统自动分配和释放的，是由高地址向低地址扩展的数据机构，是一段连续的内存区域，是对数据结构中的栈这种手段的实现。栈的顶地址和最大容量是系统预先设定好的，在程序编译时，它就是一个确定的常数，但注意并不是所有用到栈技术的区域都是栈区，虽然目前是这样，这是概念定义的准确性问题。 内存中堆，一般用来动态分配内存的，它的实现跟操作系统和编译器有关，一般内存中的堆貌似是用链表实现的。]]></content>
