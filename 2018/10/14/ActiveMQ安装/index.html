@@ -98,7 +98,7 @@
 <meta property="og:image" content="http://yoursite.com/uploads/ActiveMQ安装/ActiveMQ安装-1.png">
 <meta property="og:image" content="http://yoursite.com/uploads/ActiveMQ安装/ActiveMQ安装-2.png">
 <meta property="og:image" content="http://yoursite.com/uploads/ActiveMQ安装/ActiveMQ安装-3.png">
-<meta property="og:updated_time" content="2018-10-13T17:20:27.730Z">
+<meta property="og:updated_time" content="2018-10-19T16:39:12.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ActiveMQ安装">
 <meta name="twitter:description" content="ActiveMQ 是Apache出品，最流行的，能力强劲的开源消息总线。MQ: message queue, 顾名思义就是消息队列的意思。因而这个主要是关于消息交互和消息队列的。">
@@ -452,6 +452,7 @@
 <ol>
 <li>windows系统，在bin文件夹下打开cmd命令行，输入 activemq-admin.bat start。  </li>
 <li>大约是JDK版本问题，引起了闪退。</li>
+<li>后来偶然发现另一个方式，根目录的bin文件下有win32和win64两个文件夹，因为我的是64位，所以就打开win64文件夹，并且运行activemq.bat即可直接使用。(当然若运行InstallService.bat并打开activemq服务可以直接打开管理页面，不需要去console运行了)</li>
 </ol>
 <p>我是使用了第一个方法解决的。</p>
 <p>出错时显示如下：</p>
