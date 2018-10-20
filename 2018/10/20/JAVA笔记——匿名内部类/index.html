@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="JJ❤22">
 <meta property="og:description" content="今天写ActiveMQ代码时遇到一个不熟悉的东西，叫匿名内部类，于是查阅记录一下。首先代码如下： 1234567891011//7.创建一个监听器consumer.setMessageListener(new MessageListener() &amp;#123;    public void onMessage(Message message) &amp;#123;        TextMessage te">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-20T07:49:04.028Z">
+<meta property="og:updated_time" content="2018-10-20T11:31:50.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA笔记——匿名内部类">
 <meta name="twitter:description" content="今天写ActiveMQ代码时遇到一个不熟悉的东西，叫匿名内部类，于是查阅记录一下。首先代码如下： 1234567891011//7.创建一个监听器consumer.setMessageListener(new MessageListener() &amp;#123;    public void onMessage(Message message) &amp;#123;        TextMessage te">
@@ -405,6 +405,7 @@
       
         <p>今天写ActiveMQ代码时遇到一个不熟悉的东西，叫匿名内部类，于是查阅记录一下。首先代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//7.创建一个监听器</span></span><br><span class="line">consumer.setMessageListener(<span class="keyword">new</span> MessageListener() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onMessage</span><span class="params">(Message message)</span> </span>&#123;</span><br><span class="line">        TextMessage textMessage = (TextMessage)message; <span class="comment">//强制转换，因为Producer发送的message已经确定是TextMessage类型的</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"接受消息"</span>+textMessage.getText());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JMSException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>于是我查看了一下setMessageListener方法的定义，它的参数是MessageListener：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMessageListener</span><span class="params">(MessageListener var1)</span> <span class="keyword">throws</span> JMSException</span>;</span><br></pre></td></tr></table></figure>
 <p>然后又看了一下MessageListener的定义，发现它是个接口：</p>
