@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="本来准备写个CentOS7下hadoop分布式集群的配置教程的，最近事情有点多，暂时搁置一下吧，先把遇到的小问题记录一下。 首先我用的是VMware虚拟机创建了三台虚拟机，都是CentOS7的，一台master，两台slaver，然后在master上配置了一些eclipse，准备跑MapReduce代码的，中间遇到了点小问题。">
+<meta name="description" content="本来准备写个CentOS7下hadoop分布式集群的配置教程的，最近事情有点多，暂时搁置一下吧，先把遇到的小问题记录一下。 首先我用的是VMware虚拟机创建了三台虚拟机，都是CentOS7的，一台master（命名为hadoop1），两台slaver（命名为hadoop2和hadoop3），然后在master上配置了一些eclipse，准备跑MapReduce代码的，中间遇到了点小问题。">
 <meta name="keywords" content="big data,hadoop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大数据——CentOS7 eclipse中的hadoop环节配置">
 <meta property="og:url" content="http://yoursite.com/2018/11/15/大数据——CentOS7 eclipse中的hadoop环节配置/index.html">
 <meta property="og:site_name" content="JJ❤22">
-<meta property="og:description" content="本来准备写个CentOS7下hadoop分布式集群的配置教程的，最近事情有点多，暂时搁置一下吧，先把遇到的小问题记录一下。 首先我用的是VMware虚拟机创建了三台虚拟机，都是CentOS7的，一台master，两台slaver，然后在master上配置了一些eclipse，准备跑MapReduce代码的，中间遇到了点小问题。">
+<meta property="og:description" content="本来准备写个CentOS7下hadoop分布式集群的配置教程的，最近事情有点多，暂时搁置一下吧，先把遇到的小问题记录一下。 首先我用的是VMware虚拟机创建了三台虚拟机，都是CentOS7的，一台master（命名为hadoop1），两台slaver（命名为hadoop2和hadoop3），然后在master上配置了一些eclipse，准备跑MapReduce代码的，中间遇到了点小问题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-15T05:52:50.895Z">
+<meta property="og:updated_time" content="2018-11-16T08:56:22.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据——CentOS7 eclipse中的hadoop环节配置">
-<meta name="twitter:description" content="本来准备写个CentOS7下hadoop分布式集群的配置教程的，最近事情有点多，暂时搁置一下吧，先把遇到的小问题记录一下。 首先我用的是VMware虚拟机创建了三台虚拟机，都是CentOS7的，一台master，两台slaver，然后在master上配置了一些eclipse，准备跑MapReduce代码的，中间遇到了点小问题。">
+<meta name="twitter:description" content="本来准备写个CentOS7下hadoop分布式集群的配置教程的，最近事情有点多，暂时搁置一下吧，先把遇到的小问题记录一下。 首先我用的是VMware虚拟机创建了三台虚拟机，都是CentOS7的，一台master（命名为hadoop1），两台slaver（命名为hadoop2和hadoop3），然后在master上配置了一些eclipse，准备跑MapReduce代码的，中间遇到了点小问题。">
 
 
 
@@ -404,11 +404,12 @@
 
       
         <p>本来准备写个CentOS7下hadoop分布式集群的配置教程的，最近事情有点多，暂时搁置一下吧，先把遇到的小问题记录一下。</p>
-<p>首先我用的是VMware虚拟机创建了三台虚拟机，都是CentOS7的，一台master，两台slaver，然后在master上配置了一些eclipse，准备跑MapReduce代码的，中间遇到了点小问题。</p>
+<p>首先我用的是VMware虚拟机创建了三台虚拟机，都是CentOS7的，一台master（命名为hadoop1），两台slaver（命名为hadoop2和hadoop3），然后在master上配置了一些eclipse，准备跑MapReduce代码的，中间遇到了点小问题。</p>
 <a id="more"></a>
 <p>Eclipse版本： 4.5的Mars</p>
 <p>Hadoop版本：2.7.3</p>
 <p>所用教程：<a href="https://blog.csdn.net/xiaoyw71/article/details/53316390" target="_blank" rel="noopener">https://blog.csdn.net/xiaoyw71/article/details/53316390</a></p>
+<hr>
 <p>前面还算正常，到<strong>使用New Hadoop Location打开Hadoop Location配置窗口</strong>这一步时出错了，一直没有反应，然后打开Window -&gt; Show View -&gt; Error Log 查看错误日志，出错语句主要是两种：</p>
 <p>Unhandled event loop exception</p>
 <p>org.osgi.framework.BundleException: Exception in org.eclipse.equinox.internal</p>
@@ -416,6 +417,10 @@
 <p>2018-6-29 解决Eclipse使用Hadoop插件无法新建Location的问题 - 知乎</p>
 <p><a href="https://zhuanlan.zhihu.com/p/38630695" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/38630695</a></p>
 <p>然后我下载了hadoop-eclipse-plugin-2.7.3.jar放入eclipse 安装目录下的plugins文件夹也还是解决不了，后来有人说是eclipse和hadoop-eclipse-plugin-x.x.x.jar<strong>版本不合适</strong>的，<strong>于是我把eclipse的版本改到了Neon 4.6 ，然后再重新在eclipse里面导入hadoop-eclipse-plugin-2.7.3.jar包就成功了，希望对大家有帮助。</strong></p>
+<hr>
+<p>三台集群配置完那天测试了一下jps指令感觉一切正常，于是就stop-all.sh关掉了，第二天重新start-all.sh发现作为namenode的hadoop1执行jps后少了resourcemanager，不过另外两个datanode执行jps是正常的，后来确认问题：</p>
+<p><strong>namenode中的<u>yarn-site.xml</u>文件内容和datanode中的文件内容不一致</strong>，所以出现了resourcemanager启动失败的问题（似乎是启动后又关闭了），于是我把文件内容统一了一下，重新启动就正常了。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0"?&gt;</span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">  Licensed under the Apache License, Version 2.0 (the "License");</span></span><br><span class="line"><span class="comment">  you may not use this file except in compliance with the License.</span></span><br><span class="line"><span class="comment">  You may obtain a copy of the License at</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    http://www.apache.org/licenses/LICENSE-2.0</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  Unless required by applicable law or agreed to in writing, software</span></span><br><span class="line"><span class="comment">  distributed under the License is distributed on an "AS IS" BASIS,</span></span><br><span class="line"><span class="comment">  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span><br><span class="line"><span class="comment">  See the License for the specific language governing permissions and</span></span><br><span class="line"><span class="comment">  limitations under the License. See accompanying LICENSE file.</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 通知框架MR使用YARN --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.hostname<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>hadoop01<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">value</span>&gt;</span>192.168.211.140:8032<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.scheduler.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">value</span>&gt;</span>192.168.211.140:8030<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.resource-tracker.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">value</span>&gt;</span>192.168.211.140:8031<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.admin.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">value</span>&gt;</span>192.168.211.140:8033<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.webapp.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">value</span>&gt;</span>192.168.211.140:8088<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -477,8 +482,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/20/ActiveMQ队列模式传递消息/" rel="next" title="ActiveMQ队列模式传递消息">
-                <i class="fa fa-chevron-left"></i> ActiveMQ队列模式传递消息
+              <a href="/2018/10/20/ActiveMQ主题模式传递消息/" rel="next" title="ActiveMQ主题模式传递消息">
+                <i class="fa fa-chevron-left"></i> ActiveMQ主题模式传递消息
               </a>
             
           </div>
