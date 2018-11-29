@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-27T03:02:30.224Z</updated>
+  <updated>2018-11-29T13:45:45.570Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>大数据——Ubuntu14.04 使用Sqoop将数据从Hive导入MySQL出错</title>
+    <link href="http://yoursite.com/2018/11/29/%E5%A4%A7%E6%95%B0%E6%8D%AE%E2%80%94%E2%80%94Ubuntu14.04%20%E4%BD%BF%E7%94%A8Sqoop%E5%B0%86%E6%95%B0%E6%8D%AE%E4%BB%8EHive%E5%AF%BC%E5%85%A5Mysql%E5%87%BA%E9%94%99/"/>
+    <id>http://yoursite.com/2018/11/29/大数据——Ubuntu14.04 使用Sqoop将数据从Hive导入Mysql出错/</id>
+    <published>2018-11-29T13:24:27.585Z</published>
+    <updated>2018-11-29T13:45:45.570Z</updated>
+    
+    <content type="html"><![CDATA[<p>在基于大数据双十一用户行为统计与分析实验中 进行导入数据操作时：</p><p>(4)导入数据(执行时间：20秒左右)<br>注意，刚才已经退出MySQL，回到了Shell命令提示符状态。下面就可以执行数据导入操作</p><a id="more"></a><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/sqoop</span><br><span class="line">bin/sqoop export --connect jdbc:mysql://localhost:3306/dbtaobao --username root --password root --table user_log --export-dir '/user/hive/warehouse/dbtaobao.db/inner_user_log' --fields-terminated-by ',';</span><br></pre></td></tr></table></figure><p>执行<strong>错误提示</strong>如下：</p><p>18/11/29 05:20:45 <strong>ERROR manager.SqlManager:</strong> <strong>Error executing statement: java.sql.SQLException: Access denied for user ‘root‘@’localhost’ (using password: YES)</strong><br>java.sql.SQLException: Access denied for user ‘root‘@’localhost’ (using password: YES)<br>​    at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)<br>​    at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3978)<br>​    at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3914)<br>​    at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)<br>​    at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1714)<br>​    at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1224)<br>​    at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2199)<br>​    at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2230)<br>​    at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2025)<br>​    at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:778)<br>​    at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)<br>​    at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br>​    at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)<br>​    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br>​    at java.lang.reflect.Constructor.newInstance(Constructor.java:526)<br>​    at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)<br>​    at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)<br>​    at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)<br>​    at java.sql.DriverManager.getConnection(DriverManager.java:571)<br>​    at java.sql.DriverManager.getConnection(DriverManager.java:215)<br>​    at org.apache.sqoop.manager.SqlManager.makeConnection(SqlManager.java:904)<br>​    at org.apache.sqoop.manager.GenericJdbcManager.getConnection(GenericJdbcManager.java:59)<br>​    at org.apache.sqoop.manager.SqlManager.execute(SqlManager.java:763)<br>​    at org.apache.sqoop.manager.SqlManager.execute(SqlManager.java:786)<br>​    at org.apache.sqoop.manager.SqlManager.getColumnInfoForRawQuery(SqlManager.java:289)<br>​    at org.apache.sqoop.manager.SqlManager.getColumnTypesForRawQuery(SqlManager.java:260)<br>​    at org.apache.sqoop.manager.SqlManager.getColumnTypes(SqlManager.java:246)<br>​    at org.apache.sqoop.manager.ConnManager.getColumnTypes(ConnManager.java:327)<br>​    at org.apache.sqoop.orm.ClassWriter.getColumnTypes(ClassWriter.java:1872)<br>​    at org.apache.sqoop.orm.ClassWriter.generate(ClassWriter.java:1671)<br>​    at org.apache.sqoop.tool.CodeGenTool.generateORM(CodeGenTool.java:106)<br>​    at org.apache.sqoop.tool.ExportTool.exportTable(ExportTool.java:63)<br>​    at org.apache.sqoop.tool.ExportTool.run(ExportTool.java:99)<br>​    at org.apache.sqoop.Sqoop.run(Sqoop.java:147)<br>​    at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:70)<br>​    at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:183)<br>​    at org.apache.sqoop.Sqoop.runTool(Sqoop.java:234)<br>​    at org.apache.sqoop.Sqoop.runTool(Sqoop.java:243)<br>​    at org.apache.sqoop.Sqoop.main(Sqoop.java:252)<br>18/11/29 05:20:45 ERROR tool.ExportTool: Encountered IOException running export job:<br>java.io.IOException: No columns to generate for ClassWriter<br>​    at org.apache.sqoop.orm.ClassWriter.generate(ClassWriter.java:1677)<br>​    at org.apache.sqoop.tool.CodeGenTool.generateORM(CodeGenTool.java:106)<br>​    at org.apache.sqoop.tool.ExportTool.exportTable(ExportTool.java:63)<br>​    at org.apache.sqoop.tool.ExportTool.run(ExportTool.java:99)<br>​    at org.apache.sqoop.Sqoop.run(Sqoop.java:147)<br>​    at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:70)<br>​    at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:183)<br>​    at org.apache.sqoop.Sqoop.runTool(Sqoop.java:234)<br>​    at org.apache.sqoop.Sqoop.runTool(Sqoop.java:243)<br>​    at org.apache.sqoop.Sqoop.main(Sqoop.java:252)</init></init></p><p>出现这个错误，第一反应是当前用户对于Mysql的权限不够，于是第一反应去修改权限：</p><p>先进入mysql shell:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> mysql -u root -p</span><br></pre></td></tr></table></figure><p>然后修改权限(第一个root表示用户，第二个root表示密码)：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> grant all privileges on *.* to root@localhost identified by 'root';</span><br></pre></td></tr></table></figure><p>最好刷新一下权限：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> flush privileges;</span><br></pre></td></tr></table></figure><p>经过尝试之后我发现  并 没 有 卵 用</p><p>那么问题肯定不是这个，仔细看了一遍该export指令的参数:</p><p><strong>字段解释：</strong></p><p>./bin/sqoop export ##表示数据从 hive 复制到 mysql 中<br>–connect jdbc:mysql://localhost:3306/dbtaobao<br>–username root #mysql登陆用户名<br>–password root #登录密码<br>–table user_log #mysql 中的表，即将被导入的表名称<br>–export-dir ‘/user/hive/warehouse/dbtaobao.db/user_log ‘ #hive 中被导出的文件<br>–fields-terminated-by ‘,’ #Hive 中被导出的文件字段的分隔符</p><p>我发现：password错了。。。</p><p>修改之后就正常执行了。。。下次一定要注意参数</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在基于大数据双十一用户行为统计与分析实验中 进行导入数据操作时：&lt;/p&gt;
+&lt;p&gt;(4)导入数据(执行时间：20秒左右)&lt;br&gt;注意，刚才已经退出MySQL，回到了Shell命令提示符状态。下面就可以执行数据导入操作&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="大数据" scheme="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="big data" scheme="http://yoursite.com/tags/big-data/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大数据——Ubuntu14.04 安装mysql</title>
+    <link href="http://yoursite.com/2018/11/27/%E5%A4%A7%E6%95%B0%E6%8D%AE%E2%80%94%E2%80%94Ubuntu14.04%E5%AE%89%E8%A3%85mysql/"/>
+    <id>http://yoursite.com/2018/11/27/大数据——Ubuntu14.04安装mysql/</id>
+    <published>2018-11-27T15:35:14.133Z</published>
+    <updated>2018-11-28T02:13:13.039Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天用Ubuntu安装mysql遇到了几个小坑，记录一下帮助更多的人避坑。</p><p><strong>安装教程：</strong>Ubuntu安装MySQL及常用操作_厦大数据库实验室博客  <a href="http://dblab.xmu.edu.cn/blog/install-mysql/" target="_blank" rel="noopener">http://dblab.xmu.edu.cn/blog/install-mysql/</a></p><a id="more"></a><hr><p><strong>1.mysql安装后找不到</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server  #安装mysql</span><br></pre></td></tr></table></figure><p>上述语句执行后，执行 <strong>service mysql start</strong> 出现找不到mysql情况，使用 <strong>sudo netstat -tap | grep mysql</strong> 也不能找到mysql，后来添加了两条指令，总共三条完成了mysql安装</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt install mysql-client</span><br><span class="line">sudo apt install libmysqlclient-dev</span><br></pre></td></tr></table></figure><p>参考：<a href="https://blog.csdn.net/itxiaolong3/article/details/77905923" target="_blank" rel="noopener">https://blog.csdn.net/itxiaolong3/article/details/77905923</a></p><p><strong>2.mysqld.cnf找不到</strong></p><p>想修改 <strong>/etc/mysql/mysql.conf.d/mysqld.cnf</strong> 配置文件结果找不到，这个和mysql的版本也有关，我这个5.5版本没有这个文件。</p><p>于是修改了 <strong>/etc/mysql/my.cnf</strong> 文件，该文件配置全局选项。</p><p>/etc/my.cnf    全局选项<br>/etc/mysql/my.cnf    全局选项<br>SYSCONFDIR/my.cnf    全局选项<br>$MYSQL_HOME/my.cnf    服务器特定选项（仅限服务器）<br>defaults-extra-file    指定的文件 –defaults-extra-file，如果有的话<br>~/.my.cnf    用户特定选项<br>~/.mylogin.cnf    用户特定的登录路径选项（仅限客户端）</p><p><strong>3.如果还是出现无法使用service mysql start命令的情况</strong></p><p>可能你的mysql版本有问题，（我按教程自动获取最新版本获取的是5.5的，而课题中需要的是5.7的）</p><p>可以参考该教程自己选择和下载对应版本：<br>请自行尝试，我是先按照下面第二个教程配置到3）、安装mysql－server时解包出错了，一番折腾没有解决，换了第一个，又按顺序解包一遍成功。<br>Ubuntu14.04 下安装离线安装Mysql5.7 - wst878882582的博客 - CSDN博客<br><a href="https://blog.csdn.net/wst878882582/article/details/78457531" target="_blank" rel="noopener">https://blog.csdn.net/wst878882582/article/details/78457531</a></p><p>Ubuntu14.04安装MySQL5.7.20（MySQL最新版本） - qq_34256348的博客 - CSDN博客<br><a href="https://blog.csdn.net/qq_34256348/article/details/78340333" target="_blank" rel="noopener">https://blog.csdn.net/qq_34256348/article/details/78340333</a></p><p><strong>4.ERROR 1146 (42S02): Table ‘performance_schema.session_variables’ doesn’t exist</strong></p><p>使用<strong>show variables like “char%”;</strong>指令时出现该错误</p><p>需要进行<strong>mysql_upgrade</strong>操作进行修复</p><p>1）首先退出mysql</p><p>2）在命令行界面输入：mysql_upgrade -uroot -p –force</p><p>3）然后重启mysql即可</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天用Ubuntu安装mysql遇到了几个小坑，记录一下帮助更多的人避坑。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装教程：&lt;/strong&gt;Ubuntu安装MySQL及常用操作_厦大数据库实验室博客  &lt;a href=&quot;http://dblab.xmu.edu.cn/blog/install-mysql/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://dblab.xmu.edu.cn/blog/install-mysql/&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="大数据" scheme="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="big data" scheme="http://yoursite.com/tags/big-data/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode————两数相加</title>
