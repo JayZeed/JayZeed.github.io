@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[大数据————淘宝双十一项目实战]]></title>
+    <url>%2F2018%2F12%2F04%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%E2%80%94%E2%80%94%E6%B7%98%E5%AE%9D%E5%8F%8C%E5%8D%81%E4%B8%80%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%2F</url>
+    <content type="text"><![CDATA[今天完成了一个基于淘宝双十一交易数据的大数据分析实战项目，这里稍作记录。 教程：淘宝双11数据分析与预测课程案例：厦大数据库实验室博客 http://dblab.xmu.edu.cn/blog/1362-2/ 项目和文档：https://github.com/JayZeed/taobao11]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>big data</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[大数据————Ubuntu14.04 Echarts图例设置后不显示]]></title>
+    <url>%2F2018%2F12%2F04%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%E2%80%94%E2%80%94Ubuntu14.04%20Echarts%E5%9B%BE%E4%BE%8B%E8%AE%BE%E7%BD%AE%E5%90%8E%E4%B8%8D%E6%98%BE%E7%A4%BA%2F</url>
+    <content type="text"><![CDATA[Echarts是用于前端数据可视化的一个工具。可以把数据以各种图表方式显示出来。 最近做一个大数据项目时，通过Echarts做了一个柱状图，但是设置了的图例一直不能显示出来。 1234legend: &#123; x: 'center', data:['销量'] &#125;, 红框内就是图例： 查了一些资料才知道原来需要series中的name和legend的data一致，这样才能显示。 123456789101112legend: &#123; x: 'center', data:['销量']&#125;,series : [ &#123; name:'销量', type:'bar', barWidth: '60%', data:y &#125;] 如果想设置图例颜色，可以在option里设置 color : […] 实现。 参考资料：echarts柱状图图例不显示的问题 - royal1235的博客 - CSDN博客https://blog.csdn.net/royal1235/article/details/80746278]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>big data</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[大数据————Ubuntu14.04 JavaScript array保存object对象出错]]></title>
+    <url>%2F2018%2F12%2F04%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%E2%80%94%E2%80%94Ubuntu14.04%20JavaScript%20array%E4%BF%9D%E5%AD%98object%E5%AF%B9%E8%B1%A1%2F</url>
+    <content type="text"><![CDATA[用JSP开发WEB应用时用到了javascript语言，其中想在数组保存object对象时出了点小问题。 123456var mydata=[];...var obj =new Object();obj.name = &lt;%=a[0]%&gt;;...mydata.push(obj); 这里我想将obj用数组存起来，发现存储失败了，控制台调试发现报错：ReferenceError: 台湾 is not defined （这里台湾是&lt;%=a[0]%&gt;得到的值）大概意思是把台湾作为变量了，而不是一个值。 因为&lt;%=a[0]%&gt;表示取得a[0]的值，那么 obj.name = &lt;%=a[0]%&gt;; 就相当于 obj.name = 台湾; 确实会被理解成变量名，而我们需要的应该是 obj.name = “台湾” ; 所以只需要改成 obj.name = “&lt;%=a[0]%&gt;”; 即可。]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>big data</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[大数据——Ubuntu14.04 使用Sqoop将数据从Hive导入MySQL出错]]></title>
     <url>%2F2018%2F11%2F29%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%E2%80%94%E2%80%94Ubuntu14.04%20%E4%BD%BF%E7%94%A8Sqoop%E5%B0%86%E6%95%B0%E6%8D%AE%E4%BB%8EHive%E5%AF%BC%E5%85%A5Mysql%E5%87%BA%E9%94%99%2F</url>
     <content type="text"><![CDATA[在基于大数据双十一用户行为统计与分析实验中 进行导入数据操作时： (4)导入数据(执行时间：20秒左右)注意，刚才已经退出MySQL，回到了Shell命令提示符状态。下面就可以执行数据导入操作 12cd /usr/local/sqoopbin/sqoop export --connect jdbc:mysql://localhost:3306/dbtaobao --username root --password root --table user_log --export-dir '/user/hive/warehouse/dbtaobao.db/inner_user_log' --fields-terminated-by ','; 执行错误提示如下： 18/11/29 05:20:45 ERROR manager.SqlManager: Error executing statement: java.sql.SQLException: Access denied for user ‘root‘@’localhost’ (using password: YES)java.sql.SQLException: Access denied for user ‘root‘@’localhost’ (using password: YES)​ at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)​ at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3978)​ at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3914)​ at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)​ at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1714)​ at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1224)​ at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2199)​ at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2230)​ at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2025)​ at com.mysql.jdbc.ConnectionImpl.(ConnectionImpl.java:778)​ at com.mysql.jdbc.JDBC4Connection.(JDBC4Connection.java:47)​ at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)​ at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)​ at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)​ at java.lang.reflect.Constructor.newInstance(Constructor.java:526)​ at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)​ at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)​ at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)​ at java.sql.DriverManager.getConnection(DriverManager.java:571)​ at java.sql.DriverManager.getConnection(DriverManager.java:215)​ at org.apache.sqoop.manager.SqlManager.makeConnection(SqlManager.java:904)​ at org.apache.sqoop.manager.GenericJdbcManager.getConnection(GenericJdbcManager.java:59)​ at org.apache.sqoop.manager.SqlManager.execute(SqlManager.java:763)​ at org.apache.sqoop.manager.SqlManager.execute(SqlManager.java:786)​ at org.apache.sqoop.manager.SqlManager.getColumnInfoForRawQuery(SqlManager.java:289)​ at org.apache.sqoop.manager.SqlManager.getColumnTypesForRawQuery(SqlManager.java:260)​ at org.apache.sqoop.manager.SqlManager.getColumnTypes(SqlManager.java:246)​ at org.apache.sqoop.manager.ConnManager.getColumnTypes(ConnManager.java:327)​ at org.apache.sqoop.orm.ClassWriter.getColumnTypes(ClassWriter.java:1872)​ at org.apache.sqoop.orm.ClassWriter.generate(ClassWriter.java:1671)​ at org.apache.sqoop.tool.CodeGenTool.generateORM(CodeGenTool.java:106)​ at org.apache.sqoop.tool.ExportTool.exportTable(ExportTool.java:63)​ at org.apache.sqoop.tool.ExportTool.run(ExportTool.java:99)​ at org.apache.sqoop.Sqoop.run(Sqoop.java:147)​ at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:70)​ at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:183)​ at org.apache.sqoop.Sqoop.runTool(Sqoop.java:234)​ at org.apache.sqoop.Sqoop.runTool(Sqoop.java:243)​ at org.apache.sqoop.Sqoop.main(Sqoop.java:252)18/11/29 05:20:45 ERROR tool.ExportTool: Encountered IOException running export job:java.io.IOException: No columns to generate for ClassWriter​ at org.apache.sqoop.orm.ClassWriter.generate(ClassWriter.java:1677)​ at org.apache.sqoop.tool.CodeGenTool.generateORM(CodeGenTool.java:106)​ at org.apache.sqoop.tool.ExportTool.exportTable(ExportTool.java:63)​ at org.apache.sqoop.tool.ExportTool.run(ExportTool.java:99)​ at org.apache.sqoop.Sqoop.run(Sqoop.java:147)​ at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:70)​ at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:183)​ at org.apache.sqoop.Sqoop.runTool(Sqoop.java:234)​ at org.apache.sqoop.Sqoop.runTool(Sqoop.java:243)​ at org.apache.sqoop.Sqoop.main(Sqoop.java:252) 出现这个错误，第一反应是当前用户对于Mysql的权限不够，于是第一反应去修改权限： 先进入mysql shell: 1$ mysql -u root -p 然后修改权限(第一个root表示用户，第二个root表示密码)： 1&gt; grant all privileges on *.* to root@localhost identified by 'root'; 最好刷新一下权限： 1&gt; flush privileges; 经过尝试之后我发现 并 没 有 卵 用 那么问题肯定不是这个，仔细看了一遍该export指令的参数: 字段解释： ./bin/sqoop export ##表示数据从 hive 复制到 mysql 中–connect jdbc:mysql://localhost:3306/dbtaobao–username root #mysql登陆用户名–password root #登录密码–table user_log #mysql 中的表，即将被导入的表名称–export-dir ‘/user/hive/warehouse/dbtaobao.db/user_log ‘ #hive 中被导出的文件–fields-terminated-by ‘,’ #Hive 中被导出的文件字段的分隔符 我发现：password错了。。。 修改之后就正常执行了。。。下次一定要注意参数]]></content>
