@@ -95,12 +95,12 @@
 <meta property="og:site_name" content="JJ❤22">
 <meta property="og:description" content="Echarts是用于前端数据可视化的一个工具。可以把数据以各种图表方式显示出来。 最近做一个大数据项目时，通过Echarts做了一个柱状图，但是设置了的图例一直不能显示出来。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="h:/myBlog/public/uploads/大数据——Echarts图例/1.png">
-<meta property="og:updated_time" content="2018-12-04T15:09:02.305Z">
+<meta property="og:image" content="http://yoursite.com/uploads/大数据——Echarts图例/1.png">
+<meta property="og:updated_time" content="2018-12-04T15:15:35.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据————Ubuntu14.04 Echarts图例设置后不显示">
 <meta name="twitter:description" content="Echarts是用于前端数据可视化的一个工具。可以把数据以各种图表方式显示出来。 最近做一个大数据项目时，通过Echarts做了一个柱状图，但是设置了的图例一直不能显示出来。">
-<meta name="twitter:image" content="h:/myBlog/public/uploads/大数据——Echarts图例/1.png">
+<meta name="twitter:image" content="http://yoursite.com/uploads/大数据——Echarts图例/1.png">
 
 
 
@@ -410,7 +410,7 @@
 <a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">legend: &#123;</span><br><span class="line">        x: <span class="string">'center'</span>,</span><br><span class="line">        data:[<span class="string">'销量'</span>]</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
 <p>红框内就是图例：</p>
-<p><img src="H:\myBlog\public\uploads\大数据——Echarts图例\1.png" alt="1"></p>
+<p><img src="\uploads\大数据——Echarts图例\1.png" alt="图例"></p>
 <p>查了一些资料才知道原来<strong>需要series中的name和legend的data一致</strong>，这样才能显示。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">legend: &#123;</span><br><span class="line">    x: <span class="string">'center'</span>,</span><br><span class="line">    data:[<span class="string">'销量'</span>]</span><br><span class="line">&#125;,</span><br><span class="line">series : [</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">'销量'</span>,</span><br><span class="line">        type:<span class="string">'bar'</span>,</span><br><span class="line">        barWidth: <span class="string">'60%'</span>,</span><br><span class="line">        data:y</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <p>如果想设置图例颜色，可以在option里设置 color : […] 实现。</p>
