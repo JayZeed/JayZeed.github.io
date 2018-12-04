@@ -560,18 +560,15 @@
 
       
         
-          
-            <p>Echarts是用于前端数据可视化的一个工具。可以把数据以各种图表方式显示出来。</p>
+          <p>Echarts是用于前端数据可视化的一个工具。可以把数据以各种图表方式显示出来。</p>
 <p>最近做一个大数据项目时，通过Echarts做了一个柱状图，但是设置了的图例一直不能显示出来。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">legend: &#123;</span><br><span class="line">        x: <span class="string">'center'</span>,</span><br><span class="line">        data:[<span class="string">'销量'</span>]</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
-<p>红框内就是图例：</p>
-<p><img src="H:\myBlog\public\uploads\大数据——Echarts图例\1.png" alt="1"></p>
-<p>查了一些资料才知道原来<strong>需要series中的name和legend的data一致</strong>，这样才能显示。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">legend: &#123;</span><br><span class="line">    x: <span class="string">'center'</span>,</span><br><span class="line">    data:[<span class="string">'销量'</span>]</span><br><span class="line">&#125;,</span><br><span class="line">series : [</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">'销量'</span>,</span><br><span class="line">        type:<span class="string">'bar'</span>,</span><br><span class="line">        barWidth: <span class="string">'60%'</span>,</span><br><span class="line">        data:y</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>如果想设置图例颜色，可以在option里设置 color : […] 实现。</p>
-<p>参考资料：echarts柱状图图例不显示的问题 - royal1235的博客 - CSDN博客<br><a href="https://blog.csdn.net/royal1235/article/details/80746278" target="_blank" rel="noopener">https://blog.csdn.net/royal1235/article/details/80746278</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/04/大数据——Ubuntu14.04 Echarts图例设置后不显示/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -722,7 +719,7 @@
       
         
           <p>用JSP开发WEB应用时用到了javascript语言，其中想在数组保存object对象时出了点小问题。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mydata=[];</span><br><span class="line">...</span><br><span class="line"><span class="keyword">var</span> obj =<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = &lt;%=a[0]%&gt;;</span><br><span class="line">...</span><br><span class="line">mydata.push(obj);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mydata=[];</span><br><span class="line">...</span><br><span class="line"><span class="keyword">var</span> obj =<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = <span class="xml"><span class="tag">&lt;<span class="name">%=a[0]%</span>&gt;</span>;</span></span><br><span class="line"><span class="xml">...</span></span><br><span class="line"><span class="xml">mydata.push(obj);</span></span><br></pre></td></tr></table></figure>
 <p>这里我想将obj用数组存起来，发现存储失败了，控制台调试发现报错：ReferenceError: 台湾 is not defined （这里台湾是&lt;%=a[0]%&gt;得到的值）大概意思是把台湾作为变量了，而不是一个值。
           <!--noindex-->
           <div class="post-button text-center">
