@@ -404,7 +404,7 @@
 
       
         <p>用JSP开发WEB应用时用到了javascript语言，其中想在数组保存object对象时出了点小问题。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mydata=[];</span><br><span class="line">...</span><br><span class="line"><span class="keyword">var</span> obj =<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = <span class="xml"><span class="tag">&lt;<span class="name">%=a[0]%</span>&gt;</span>;</span></span><br><span class="line"><span class="xml">...</span></span><br><span class="line"><span class="xml">mydata.push(obj);</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mydata=[];</span><br><span class="line">...</span><br><span class="line"><span class="keyword">var</span> obj =<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = &lt;%=a[0]%&gt;;</span><br><span class="line">...</span><br><span class="line">mydata.push(obj);</span><br></pre></td></tr></table></figure>
 <p>这里我想将obj用数组存起来，发现存储失败了，控制台调试发现报错：ReferenceError: 台湾 is not defined （这里台湾是&lt;%=a[0]%&gt;得到的值）大概意思是把台湾作为变量了，而不是一个值。<a id="more"></a></p>
 <p>因为&lt;%=a[0]%&gt;表示取得a[0]的值，那么 obj.name = &lt;%=a[0]%&gt;; 就相当于 obj.name = 台湾; 确实会被理解成变量名，而我们需要的应该是 obj.name = “台湾” ; </p>
 <p>所以只需要改成 obj.name = “&lt;%=a[0]%&gt;”; 即可。</p>
@@ -557,7 +557,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
