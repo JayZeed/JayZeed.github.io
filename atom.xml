@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-17T01:38:50.758Z</updated>
+  <updated>2018-12-27T16:42:56.566Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>大数据——hashMap put函数 重复插入相同(key,value)的问题</title>
+    <link href="http://yoursite.com/2018/12/28/%E5%A4%A7%E6%95%B0%E6%8D%AE%E2%80%94%E2%80%94hashMap%E7%9A%84put%E9%87%8D%E5%A4%8D%E6%8F%92%E5%85%A5%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2018/12/28/大数据——hashMap的put重复插入问题/</id>
+    <published>2018-12-27T16:31:26.088Z</published>
+    <updated>2018-12-27T16:42:56.566Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">writer = SequenceFile.createWriter(fs, conf, path, key.getClass(), value.getClass());</span><br><span class="line"><span class="keyword">for</span>(File dir:dirs)&#123;</span><br><span class="line">File[] files = dir.listFiles();</span><br><span class="line"><span class="keyword">for</span>(File file:files)&#123;</span><br><span class="line"><span class="comment">//key：目录名+":"+文件名</span></span><br><span class="line">key.set(dir.getName() + <span class="string">":"</span> + file.getName());</span><br><span class="line"><span class="comment">//value：文件内容</span></span><br><span class="line">value.set(fileToString(file));</span><br><span class="line">fileContents.put(key, value); <span class="comment">//////////////////////////A</span></span><br><span class="line">fileContents.put(<span class="keyword">new</span> Text(dir.getName() + <span class="string">":"</span> + file.getName()), <span class="keyword">new</span> Text(fileToString(file))); <span class="comment">/////////////////////////////B</span></span><br><span class="line">writer.append(key, value);</span><br><span class="line"><span class="comment">//System.out.println(key + "\t" + value);</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">IOUtils.closeStream(writer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>今天做基于hadoop的朴素贝叶斯文档分类时，遇到一个问题：注意代码块中的A和B，最开始使用A时我发现hashMap内存储的都是同一个(key，value)对，改成B就可以了，目测应该是key和value对数据引用后，修改key和value导致hash值变化了。</p><p>具体类比资料：hashmap出现重复key的情况 - qq_29909965的博客 - CSDN博客<br><a href="https://blog.csdn.net/qq_29909965/article/details/78358066" target="_blank" rel="noopener">https://blog.csdn.net/qq_29909965/article/details/78358066</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=
+      
+    
+    </summary>
+    
+      <category term="大数据" scheme="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="big data" scheme="http://yoursite.com/tags/big-data/"/>
+    
+      <category term="hadoop" scheme="http://yoursite.com/tags/hadoop/"/>
+    
+  </entry>
   
   <entry>
     <title>JAVA笔记——类的访问权限</title>
@@ -486,31 +513,6 @@
     
     
       <category term="ActiveMQ" scheme="http://yoursite.com/tags/ActiveMQ/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构之堆栈</title>
-    <link href="http://yoursite.com/2018/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%A0%86%E6%A0%88/"/>
-    <id>http://yoursite.com/2018/10/11/数据结构之堆栈/</id>
-    <published>2018-10-11T15:24:13.330Z</published>
-    <updated>2018-10-14T08:26:40.717Z</updated>
-    
-    <content type="html"><![CDATA[<p>关于堆栈的基础知识此处不做赘述。主要写一下今天学习数据结构的堆栈时看到的一个问题：</p><h2 id="JVM的堆栈和数据结构的堆栈一样么"><a href="#JVM的堆栈和数据结构的堆栈一样么" class="headerlink" title="JVM的堆栈和数据结构的堆栈一样么"></a>JVM的堆栈和数据结构的堆栈一样么</h2><p>第一反应肯定还是不一样的，但是具体为什么不一样好像也不知道个所以然。。于是上网查了查，此处引用一篇资料，希望有所帮助。<br><a id="more"></a></p><p>JVM中的stack和heap与数据结构中所说的stack和heap是一个概念吗-CSDN论坛<br><a href="https://bbs.csdn.net/topics/330120842" target="_blank" rel="noopener">https://bbs.csdn.net/topics/330120842</a></p><p><a href="https://blog.csdn.net/weixin_41856078/article/details/79725852" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41856078/article/details/79725852</a></p><p>JVM中的stack和heap的实现方法与特性和普通的数据结构是一样，概念上应该是一致的。只是实现层次不同，实现方式上肯定比一般的实现要复杂点，只是对外的操作肯定一致。</p><p><strong>数据结构中的堆栈</strong>：是两种特殊的数据结构，都是对数据项按序排列的数据结构，对管理数据的一种手段和方法。可以用来存放数据和地址，栈只能在一端（栈顶）对数据项进行插入和删除。</p><p><strong>内存中的堆栈</strong>：是确切存在的物理结构，是用来存放不同数据的内存空间。内存中的栈，是由系统自动分配和释放的，是由高地址向低地址扩展的数据机构，是一段连续的内存区域，是对数据结构中的栈这种手段的实现。栈的顶地址和最大容量是系统预先设定好的，在程序编译时，它就是一个确定的常数，但注意并不是所有用到栈技术的区域都是栈区，虽然目前是这样，这是概念定义的准确性问题。 内存中堆，一般用来动态分配内存的，它的实现跟操作系统和编译器有关，一般内存中的堆貌似是用链表实现的。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关于堆栈的基础知识此处不做赘述。主要写一下今天学习数据结构的堆栈时看到的一个问题：&lt;/p&gt;
-&lt;h2 id=&quot;JVM的堆栈和数据结构的堆栈一样么&quot;&gt;&lt;a href=&quot;#JVM的堆栈和数据结构的堆栈一样么&quot; class=&quot;headerlink&quot; title=&quot;JVM的堆栈和数据结构的堆栈一样么&quot;&gt;&lt;/a&gt;JVM的堆栈和数据结构的堆栈一样么&lt;/h2&gt;&lt;p&gt;第一反应肯定还是不一样的，但是具体为什么不一样好像也不知道个所以然。。于是上网查了查，此处引用一篇资料，希望有所帮助。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="堆栈" scheme="http://yoursite.com/tags/%E5%A0%86%E6%A0%88/"/>
     
   </entry>
   

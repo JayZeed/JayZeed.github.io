@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[大数据——hashMap put函数 重复插入相同(key,value)的问题]]></title>
+    <url>%2F2018%2F12%2F28%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%E2%80%94%E2%80%94hashMap%E7%9A%84put%E9%87%8D%E5%A4%8D%E6%8F%92%E5%85%A5%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718try&#123; writer = SequenceFile.createWriter(fs, conf, path, key.getClass(), value.getClass()); for(File dir:dirs)&#123; File[] files = dir.listFiles(); for(File file:files)&#123; //key：目录名+":"+文件名 key.set(dir.getName() + ":" + file.getName()); //value：文件内容 value.set(fileToString(file)); fileContents.put(key, value); //////////////////////////A fileContents.put(new Text(dir.getName() + ":" + file.getName()), new Text(fileToString(file))); /////////////////////////////B writer.append(key, value); //System.out.println(key + "\t" + value); &#125; &#125; &#125;finally&#123; IOUtils.closeStream(writer); &#125; 今天做基于hadoop的朴素贝叶斯文档分类时，遇到一个问题：注意代码块中的A和B，最开始使用A时我发现hashMap内存储的都是同一个(key，value)对，改成B就可以了，目测应该是key和value对数据引用后，修改key和value导致hash值变化了。 具体类比资料：hashmap出现重复key的情况 - qq_29909965的博客 - CSDN博客https://blog.csdn.net/qq_29909965/article/details/78358066]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>big data</tag>
+        <tag>hadoop</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JAVA笔记——类的访问权限]]></title>
     <url>%2F2018%2F12%2F17%2FJAVA%E7%AC%94%E8%AE%B0%E2%80%94%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%2F</url>
     <content type="text"><![CDATA[如果一个类的成员没有任何权限修饰，那么它门就是缺省包访问权限，用friendly来表示，注意friendly不是Java中的关键字，这里是个人喜欢的方式用它表示而已。同一个包内其它类可以访问，但包外就不可以。对于同一个文件夹下的、没有用package的classes，Java会自动将这些classes初见为隶属于该目录的default package，可以相互调用class中的friendly成员。 如以下两个class分别在同一个文件夹的两个文件中，虽然没有引入package，但隶属于相同的default package。 1234567891011class Sundae&#123; //以下两个方法缺省为friendly Sundae()&#123;&#125; Void f() &#123;System.out.println(“Sundae.f()”);&#125;public class IceCream&#123; public static void main(String[] args)&#123; Sundae x = new Sundae(); x.f(); &#125;&#125; 对于类来说：同一个包中的类可以用。总之，类只可以声明为public或者friendly。]]></content>
