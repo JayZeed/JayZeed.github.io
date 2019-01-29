@@ -87,19 +87,19 @@
 
 
 
-<meta name="description" content="今天看到一个JVM的比较有意思的帖子，比较形象生动，此处记录一下。 JVM内存区域划分Eden Space、Survivor Space、Tenured Gen，Perm Gen解释 - kaixinmao1987 - 博客园https://www.cnblogs.com/kxm87/p/7205414.html  jvm区域总体分两类，heap区和非heap区。heap区又分：Eden Spac">
+<meta name="description" content="今天看到一个JVM的比较有意思的帖子，比较形象生动，此处记录一下。 JVM内存区域划分Eden Space、Survivor Space、Tenured Gen，Perm Gen解释 - kaixinmao1987 - 博客园https://www.cnblogs.com/kxm87/p/7205414.html [译]GC专家系列1：理解Java垃圾回收 - 牧曦之晨 - SegmentFaul">
 <meta name="keywords" content="JAVA,JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA笔记——JVM内存区域划分[转载]">
 <meta property="og:url" content="http://yoursite.com/2019/01/29/JAVA—JVM内存区域划分[转]/index.html">
 <meta property="og:site_name" content="JJ❤22">
-<meta property="og:description" content="今天看到一个JVM的比较有意思的帖子，比较形象生动，此处记录一下。 JVM内存区域划分Eden Space、Survivor Space、Tenured Gen，Perm Gen解释 - kaixinmao1987 - 博客园https://www.cnblogs.com/kxm87/p/7205414.html  jvm区域总体分两类，heap区和非heap区。heap区又分：Eden Spac">
+<meta property="og:description" content="今天看到一个JVM的比较有意思的帖子，比较形象生动，此处记录一下。 JVM内存区域划分Eden Space、Survivor Space、Tenured Gen，Perm Gen解释 - kaixinmao1987 - 博客园https://www.cnblogs.com/kxm87/p/7205414.html [译]GC专家系列1：理解Java垃圾回收 - 牧曦之晨 - SegmentFaul">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/uploads/JAVA笔记/2.png">
-<meta property="og:updated_time" content="2019-01-29T11:24:13.859Z">
+<meta property="og:updated_time" content="2019-01-29T12:11:29.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA笔记——JVM内存区域划分[转载]">
-<meta name="twitter:description" content="今天看到一个JVM的比较有意思的帖子，比较形象生动，此处记录一下。 JVM内存区域划分Eden Space、Survivor Space、Tenured Gen，Perm Gen解释 - kaixinmao1987 - 博客园https://www.cnblogs.com/kxm87/p/7205414.html  jvm区域总体分两类，heap区和非heap区。heap区又分：Eden Spac">
+<meta name="twitter:description" content="今天看到一个JVM的比较有意思的帖子，比较形象生动，此处记录一下。 JVM内存区域划分Eden Space、Survivor Space、Tenured Gen，Perm Gen解释 - kaixinmao1987 - 博客园https://www.cnblogs.com/kxm87/p/7205414.html [译]GC专家系列1：理解Java垃圾回收 - 牧曦之晨 - SegmentFaul">
 <meta name="twitter:image" content="http://yoursite.com/uploads/JAVA笔记/2.png">
 
 
@@ -407,8 +407,9 @@
       
         <p>今天看到一个JVM的比较有意思的帖子，比较形象生动，此处记录一下。</p>
 <p>JVM内存区域划分Eden Space、Survivor Space、Tenured Gen，Perm Gen解释 - kaixinmao1987 - 博客园<br><a href="https://www.cnblogs.com/kxm87/p/7205414.html" target="_blank" rel="noopener">https://www.cnblogs.com/kxm87/p/7205414.html</a></p>
+<p>[译]GC专家系列1：理解Java垃圾回收 - 牧曦之晨 - SegmentFault 思否<br><a href="https://segmentfault.com/a/1190000004233812" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004233812</a></p>
 <hr>
-<p>jvm区域总体分两类，heap区和非heap区。heap区又分：Eden Space（伊甸园）、Survivor Space(幸存者区)、Tenured Gen（老年代-养老区）。 非heap区又分：Code Cache(代码缓存区)、Perm Gen（永久代）、Jvm Stack(java虚拟机栈)、Local Method Statck(本地方法栈)。</p>
+<p>jvm区域总体分两类，heap区和非heap区。heap区又分：Eden Space（伊甸园）、Survivor Space(幸存者区)、Tenured Gen（老年代-养老区）。 非heap区又分：Code Cache(代码缓存区)、Perm Gen（永久代）、Jvm Stack(java虚拟机栈)、Local Method Statck(本地方法栈)。<a id="more"></a></p>
 <p>HotSpot虚拟机GC算法采用分代收集算法：</p>
 <p>1、一个人（对象）出来（new 出来）后会在Eden Space（伊甸园）无忧无虑的生活，直到GC到来打破了他们平静的生活。GC会逐一问清楚每个对象的情况，有没有钱（此对象的引用）啊，因为GC想赚钱呀，有钱的才可以敲诈嘛。然后富人就会进入Survivor Space（幸存者区），穷人的就直接kill掉。</p>
 <p>2、并不是进入Survivor Space（幸存者区）后就保证人身是安全的，但至少可以活段时间。GC会定期（可以自定义）会对这些人进行敲诈，亿万富翁每次都给钱，GC很满意，就让其进入了Genured Gen(养老区)。万元户经不住几次敲诈就没钱了，GC看没有啥价值啦，就直接kill掉了。</p>
