@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JAVA,JVM," />
 
 
 
@@ -87,16 +87,20 @@
 
 
 
-<meta name="description" content="QQ:339003672WeChat:Zhang_junj">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JJ❤22">
-<meta property="og:url" content="http://yoursite.com/archives/2018/12/index.html">
+<meta name="description" content="今天看到一个JVM的比较有意思的帖子，比较形象生动，此处记录一下。 JVM内存区域划分Eden Space、Survivor Space、Tenured Gen，Perm Gen解释 - kaixinmao1987 - 博客园https://www.cnblogs.com/kxm87/p/7205414.html  jvm区域总体分两类，heap区和非heap区。heap区又分：Eden Spac">
+<meta name="keywords" content="JAVA,JVM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA笔记——JVM内存区域划分[转载]">
+<meta property="og:url" content="http://yoursite.com/2019/01/29/JAVA—JVM内存区域划分[转]/index.html">
 <meta property="og:site_name" content="JJ❤22">
-<meta property="og:description" content="QQ:339003672WeChat:Zhang_junj">
+<meta property="og:description" content="今天看到一个JVM的比较有意思的帖子，比较形象生动，此处记录一下。 JVM内存区域划分Eden Space、Survivor Space、Tenured Gen，Perm Gen解释 - kaixinmao1987 - 博客园https://www.cnblogs.com/kxm87/p/7205414.html  jvm区域总体分两类，heap区和非heap区。heap区又分：Eden Spac">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/uploads/JAVA笔记/2.png">
+<meta property="og:updated_time" content="2019-01-29T11:24:13.859Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JJ❤22">
-<meta name="twitter:description" content="QQ:339003672WeChat:Zhang_junj">
+<meta name="twitter:title" content="JAVA笔记——JVM内存区域划分[转载]">
+<meta name="twitter:description" content="今天看到一个JVM的比较有意思的帖子，比较形象生动，此处记录一下。 JVM内存区域划分Eden Space、Survivor Space、Tenured Gen，Perm Gen解释 - kaixinmao1987 - 博客园https://www.cnblogs.com/kxm87/p/7205414.html  jvm区域总体分两类，heap区和非heap区。heap区又分：Eden Spac">
+<meta name="twitter:image" content="http://yoursite.com/uploads/JAVA笔记/2.png">
 
 
 
@@ -126,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/12/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/29/JAVA—JVM内存区域划分[转]/"/>
 
 
 
 
 
-  <title>归档 | JJ❤22</title>
+  <title>JAVA笔记——JVM内存区域划分[转载] | JJ❤22</title>
   
 
 
@@ -151,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     
 	<a href="https://your-url" class="github-corner" aria-label="View source on GitHub">
@@ -287,330 +291,232 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-        目前共计 29 篇日志。
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/29/JAVA—JVM内存区域划分[转]/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JJZhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JJ❤22">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">JAVA笔记——JVM内存区域划分[转载]</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-29T17:50:32+08:00">
+                2019-01-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/28/大数据——hashMap的put重复插入问题/" itemprop="url">
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">大数据——hashMap put函数 重复插入相同(key,value)的问题</span>
+                <span class="post-meta-item-text">分类于</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-28T00:31:26+08:00"
-              content="2018-12-28" >
-          12-28
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+          
 
+          
+          
+             <span id="/2019/01/29/JAVA—JVM内存区域划分[转]/" class="leancloud_visitors" data-flag-title="JAVA笔记——JVM内存区域划分[转载]">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/17/JAVA笔记—类的访问权限/" itemprop="url">
-              
-                <span itemprop="name">JAVA笔记——类的访问权限</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-17T09:35:12+08:00"
-              content="2018-12-17" >
-          12-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/16/LeetCode——回文数/" itemprop="url">
-              
-                <span itemprop="name">LeetCode————9.回文数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-16T14:50:22+08:00"
-              content="2018-12-16" >
-          12-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>今天看到一个JVM的比较有意思的帖子，比较形象生动，此处记录一下。</p>
+<p>JVM内存区域划分Eden Space、Survivor Space、Tenured Gen，Perm Gen解释 - kaixinmao1987 - 博客园<br><a href="https://www.cnblogs.com/kxm87/p/7205414.html" target="_blank" rel="noopener">https://www.cnblogs.com/kxm87/p/7205414.html</a></p>
+<hr>
+<p>jvm区域总体分两类，heap区和非heap区。heap区又分：Eden Space（伊甸园）、Survivor Space(幸存者区)、Tenured Gen（老年代-养老区）。 非heap区又分：Code Cache(代码缓存区)、Perm Gen（永久代）、Jvm Stack(java虚拟机栈)、Local Method Statck(本地方法栈)。</p>
+<p>HotSpot虚拟机GC算法采用分代收集算法：</p>
+<p>1、一个人（对象）出来（new 出来）后会在Eden Space（伊甸园）无忧无虑的生活，直到GC到来打破了他们平静的生活。GC会逐一问清楚每个对象的情况，有没有钱（此对象的引用）啊，因为GC想赚钱呀，有钱的才可以敲诈嘛。然后富人就会进入Survivor Space（幸存者区），穷人的就直接kill掉。</p>
+<p>2、并不是进入Survivor Space（幸存者区）后就保证人身是安全的，但至少可以活段时间。GC会定期（可以自定义）会对这些人进行敲诈，亿万富翁每次都给钱，GC很满意，就让其进入了Genured Gen(养老区)。万元户经不住几次敲诈就没钱了，GC看没有啥价值啦，就直接kill掉了。</p>
+<p>3、进入到养老区的人基本就可以保证人身安全啦，但是亿万富豪有的也会挥霍成穷光蛋，只要钱没了，GC还是kill掉。</p>
+<p>分区的目的：新生区由于对象产生的比较多并且大都是朝生夕灭的，所以直接采用标记-清理算法。而养老区生命力很强，则采用复制算法，针对不同情况使用不同算法。</p>
+<p>非heap区域中Perm Gen中放着类、方法的定义，jvm Stack区域放着方法参数、局域变量等的引用，方法执行顺序按照栈的先入后出方式。</p>
+<p>以上转自：<a href="http://lhc1986.iteye.com/blog/1421832" target="_blank" rel="noopener">http://lhc1986.iteye.com/blog/1421832</a></p>
+<p>以下转自：<a href="http://www.cnblogs.com/xhr8334/archive/2011/12/01/2270994.html" target="_blank" rel="noopener">http://www.cnblogs.com/xhr8334/archive/2011/12/01/2270994.html</a></p>
+<p>JVM在程序运行过程当中，会创建大量的对象，这些对象，大部分是短周期的对象，小部分是长周期的对象，对于短周期的对象，需要频繁地进行垃圾回收以保证无用对象尽早被释放掉，对于长周期对象，则不需要频率垃圾回收以确保无谓地垃圾扫描检测。为解决这种矛盾，Sun JVM的内存管理采用分代的策略。</p>
+<p>​      1）年轻代(Young Gen)：年轻代主要存放新创建的对象，内存大小相对会比较小，垃圾回收会比较频繁。年轻代分成1个Eden Space和2个Suvivor Space（命名为A和B）。当对象在堆创建时，将进入年轻代的Eden Space。垃圾回收器进行垃圾回收时，扫描Eden Space和A Suvivor Space，如果对象仍然存活，则复制到B Suvivor Space，如果B Suvivor Space已经满，则复制到Old Gen。同时，在扫描Suvivor Space时，如果对象已经经过了几次的扫描仍然存活，JVM认为其为一个持久化对象，则将其移到Old Gen。扫描完毕后，JVM将Eden Space和A Suvivor Space清空，然后交换A和B的角色（即下次垃圾回收时会扫描Eden Space和BSuvivor Space。这么做主要是为了减少内存碎片的产生。</p>
+<p>​      我们可以看到：Young Gen垃圾回收时，采用将存活对象复制到到空的Suvivor Space的方式来确保尽量不存在内存碎片，采用空间换时间的方式来加速内存中不再被持有的对象尽快能够得到回收。<br>​      2）年老代(Tenured Gen)：年老代主要存放JVM认为生命周期比较长的对象（经过几次的Young Gen的垃圾回收后仍然存在），内存大小相对会比较大，垃圾回收也相对没有那么频繁（譬如可能几个小时一次）。年老代主要采用压缩的方式来避免内存碎片（将存活对象移动到内存片的一边，也就是内存整理）。当然，有些垃圾回收器（譬如CMS垃圾回收器）出于效率的原因，可能会不进行压缩。<br>​      3）持久代(Perm Gen)：持久代主要存放类定义、字节码和常量等很少会变更的信息。</p>
+<p><img src="\uploads\JAVA笔记\2.png" alt="img"></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/07/LeetCode——整数反转/" itemprop="url">
-              
-                <span itemprop="name">LeetCode————7.整数反转</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-07T00:37:22+08:00"
-              content="2018-12-07" >
-          12-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/06/LeetCode——最长回文子串/" itemprop="url">
-              
-                <span itemprop="name">LeetCode————5.最长回文子串(常考)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-06T17:37:22+08:00"
-              content="2018-12-06" >
-          12-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/04/大数据——淘宝双十一项目实战/" itemprop="url">
-              
-                <span itemprop="name">大数据————淘宝双十一项目实战</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-04T22:30:55+08:00"
-              content="2018-12-04" >
-          12-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/04/大数据——Ubuntu14.04 Echarts图例设置后不显示/" itemprop="url">
-              
-                <span itemprop="name">大数据————Ubuntu14.04 Echarts图例设置后不显示</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-04T22:12:42+08:00"
-              content="2018-12-04" >
-          12-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/04/大数据——Ubuntu14.04 JavaScript array保存object对象/" itemprop="url">
-              
-                <span itemprop="name">大数据————Ubuntu14.04 JavaScript array保存object对象出错</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-04T20:46:46+08:00"
-              content="2018-12-04" >
-          12-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="JJZhang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="JJZhang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+          
+            <a href="/tags/JVM/" rel="tag"># JVM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/25/JAVA笔记—String中的intern()方法[转]/" rel="next" title="JAVA笔记——String中的intern()方法[转载]">
+                <i class="fa fa-chevron-left"></i> JAVA笔记——String中的intern()方法[转载]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -618,6 +524,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -852,6 +762,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
