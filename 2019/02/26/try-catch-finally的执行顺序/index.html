@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="基础知识," />
 
 
 
@@ -87,16 +87,31 @@
 
 
 
-<meta name="description" content="QQ:339003672WeChat:Zhang_junj">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JJ❤22">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="原文链接：https://www.cnblogs.com/superFish2016/p/6687549.html 在网上看到一些异常处理的面试题，试着总结一下，先看下面代码，把这个方法在main中进行调用打印返回结果，看看结果输出什么。">
+<meta name="keywords" content="基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="try-catch-finally的执行顺序[转]">
+<meta property="og:url" content="http://yoursite.com/2019/02/26/try-catch-finally的执行顺序/index.html">
 <meta property="og:site_name" content="JJ❤22">
-<meta property="og:description" content="QQ:339003672WeChat:Zhang_junj">
+<meta property="og:description" content="原文链接：https://www.cnblogs.com/superFish2016/p/6687549.html 在网上看到一些异常处理的面试题，试着总结一下，先看下面代码，把这个方法在main中进行调用打印返回结果，看看结果输出什么。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:updated_time" content="2019-02-26T02:54:45.928Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JJ❤22">
-<meta name="twitter:description" content="QQ:339003672WeChat:Zhang_junj">
+<meta name="twitter:title" content="try-catch-finally的执行顺序[转]">
+<meta name="twitter:description" content="原文链接：https://www.cnblogs.com/superFish2016/p/6687549.html 在网上看到一些异常处理的面试题，试着总结一下，先看下面代码，把这个方法在main中进行调用打印返回结果，看看结果输出什么。">
+<meta name="twitter:image" content="https://common.cnblogs.com/images/copycode.gif">
 
 
 
@@ -126,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/26/try-catch-finally的执行顺序/"/>
 
 
 
 
 
-  <title>归档 | JJ❤22</title>
+  <title>try-catch-finally的执行顺序[转] | JJ❤22</title>
   
 
 
@@ -151,7 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     
 	<a href="https://your-url" class="github-corner" aria-label="View source on GitHub">
@@ -287,408 +302,262 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-        目前共计 33 篇日志。
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/26/try-catch-finally的执行顺序/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JJZhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JJ❤22">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">try-catch-finally的执行顺序[转]</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T10:50:22+08:00">
+                2019-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/28/大数据——hashMap的put重复插入问题/" itemprop="url">
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">大数据——hashMap put函数 重复插入相同(key,value)的问题</span>
+                <span class="post-meta-item-text">分类于</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-28T00:31:26+08:00"
-              content="2018-12-28" >
-          12-28
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+          
 
+          
+          
+             <span id="/2019/02/26/try-catch-finally的执行顺序/" class="leancloud_visitors" data-flag-title="try-catch-finally的执行顺序[转]">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/17/JAVA笔记—类的访问权限/" itemprop="url">
-              
-                <span itemprop="name">JAVA笔记——类的访问权限</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-17T09:35:12+08:00"
-              content="2018-12-17" >
-          12-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/16/LeetCode——回文数/" itemprop="url">
-              
-                <span itemprop="name">LeetCode————9.回文数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-16T14:50:22+08:00"
-              content="2018-12-16" >
-          12-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>原文链接：<a href="https://www.cnblogs.com/superFish2016/p/6687549.html" target="_blank" rel="noopener">https://www.cnblogs.com/superFish2016/p/6687549.html</a></p>
+<p>在网上看到一些异常处理的面试题，试着总结一下，先看下面代码，把这个方法在main中进行调用打印返回结果，看看结果输出什么。<a id="more"></a></p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static  int testBasic()&#123;</span><br><span class="line">        int i = 1; </span><br><span class="line">        try&#123;</span><br><span class="line">            i++;</span><br><span class="line">            System.out.println(&quot;try block, i = &quot;+i);</span><br><span class="line">        &#125;catch(Exception e)&#123;</span><br><span class="line">            i ++;</span><br><span class="line">            System.out.println(&quot;catch block i = &quot;+i);</span><br><span class="line">        &#125;finally&#123;</span><br><span class="line">            i = 10;</span><br><span class="line">            System.out.println(&quot;finally block i = &quot;+i);</span><br><span class="line">        &#125;</span><br><span class="line">        return i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>没错，会按照顺序执行，先执行try内代码段，没有异常的话进入finally，最后返回，那么输出如下：</p>
+<p>try block, i = 2<br>finally block i = 10<br>main test i = 10</p>
+<p>这个没有问题，如果我们把return语句放入try catch里又会怎么样呢</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public static  int testBasic()&#123;</span><br><span class="line">        int i = 1; </span><br><span class="line">        try&#123;</span><br><span class="line">            i++;</span><br><span class="line">            System.out.println(&quot;try block, i = &quot;+i);</span><br><span class="line">            return i;</span><br><span class="line">        &#125;catch(Exception e)&#123;</span><br><span class="line">            i ++;</span><br><span class="line">            System.out.println(&quot;catch block i = &quot;+i);</span><br><span class="line">            return i;</span><br><span class="line">        &#125;finally&#123;</span><br><span class="line">            i = 10;</span><br><span class="line">            System.out.println(&quot;finally block i = &quot;+i);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>输出结果是：</p>
+<p>try block, i = 2<br>finally block i = 10<br>main test i = 2</p>
+<p>代码顺序执行从try到finally，由于finally是无论如何都会执行的，所以try里的语句并不会直接返回。在try语句的return块中，return返回的引用变量并不是try语句外定义的引用变量i,而是系统重新定义了一个局部引用i’，这个引用指向了引用i对应的值，也就是2，即使在finally语句中把引用i指向了值10，因为return返回的引用已经不是i,而是i’,所以引用i的值和try语句中的返回值无关了。</p>
+<p>但是，这只是一部分，如果把i换成包装类型而不是基本类型呢，来看看输出结果怎样，示例如下：</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public static  List&lt;Object&gt; testWrap()&#123;</span><br><span class="line">        List&lt;Object&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">        try&#123;</span><br><span class="line">            list.add(&quot;try&quot;);</span><br><span class="line">            System.out.println(&quot;try block&quot;);</span><br><span class="line">            return list;</span><br><span class="line">        &#125;catch(Exception e)&#123;</span><br><span class="line">            list.add(&quot;catch&quot;);</span><br><span class="line">            System.out.println(&quot;catch block&quot;);</span><br><span class="line">            return list;</span><br><span class="line">        &#125;finally&#123;</span><br><span class="line">            list.add(&quot;finally&quot;);</span><br><span class="line">            System.out.println(&quot;finally block &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>打印结果如下：</p>
+<p>try block<br>finally block<br>main test i = [try, finally]</p>
+<p>可以看到，finally里对list集合的操作生效了，这是为什么呢。我们知道基本类型在栈中存储，而对于非基本类型是存储在堆中的，返回的是堆中的地址，因此内容被改变了。</p>
+<p>好了，现在我们在finally里加一个return，看看语句是从哪里返回的。</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static  int testBasic()&#123;</span><br><span class="line">        int i = 1; </span><br><span class="line">        try&#123;</span><br><span class="line">            i++;</span><br><span class="line">            System.out.println(&quot;try block, i = &quot;+i);</span><br><span class="line">            return i;</span><br><span class="line">        &#125;catch(Exception e)&#123;</span><br><span class="line">            i ++;</span><br><span class="line">            System.out.println(&quot;catch block i = &quot;+i);</span><br><span class="line">            return i;</span><br><span class="line">        &#125;finally&#123;</span><br><span class="line">            i = 10;</span><br><span class="line">            System.out.println(&quot;finally block i = &quot;+i);</span><br><span class="line">            return i;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>输出结果如下：</p>
+<p>try block, i = 2<br>finally block i = 10<br>main test i = 10</p>
+<p>可以看到，是从finally语句块中返回的。可见，JVM是忽略了try中的return语句。但IDE中会对finally中加的return有黄色警告提示，这是为什么呢，在try里加入一行会执行异常的代码，如下：</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public static  int testBasic()&#123;</span><br><span class="line">        int i = 1; </span><br><span class="line">        try&#123;</span><br><span class="line">            i++;</span><br><span class="line">            int m = i / 0 ;</span><br><span class="line">            System.out.println(&quot;try block, i = &quot;+i);</span><br><span class="line">            return i;</span><br><span class="line">        &#125;catch(Exception e)&#123;</span><br><span class="line">            i ++;</span><br><span class="line">            System.out.println(&quot;catch block i = &quot;+i);</span><br><span class="line">            return i;</span><br><span class="line">        &#125;finally&#123;</span><br><span class="line">            i = 10;</span><br><span class="line">            System.out.println(&quot;finally block i = &quot;+i);</span><br><span class="line">            return i;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>打印结果如下：</p>
+<p>catch block i = 3<br>finally block i = 10<br>main test i = 10</p>
+<p>可以看到，因为finally中有return语句，try、catch中的异常被消化掉了，屏蔽了异常的发生，这与初期使用try、catch的初衷是相违背的，因此编译器也会提示警告。</p>
+<p>那如果在finally中有异常发生，会对try、catch中的异常有什么影响呢？</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public static  int testBasic()&#123;</span><br><span class="line">        int i = 1; </span><br><span class="line">        try&#123;</span><br><span class="line">            i++;</span><br><span class="line">            Integer.parseInt(null);</span><br><span class="line">            System.out.println(&quot;try block, i = &quot;+i);</span><br><span class="line">            return i;</span><br><span class="line">        &#125;catch(Exception e)&#123;</span><br><span class="line">            String.valueOf(null);</span><br><span class="line">            System.out.println(&quot;catch block i = &quot;+i);</span><br><span class="line">            return i;</span><br><span class="line">        &#125;finally&#123;</span><br><span class="line">            i = 10;</span><br><span class="line">            int m = i / 0;</span><br><span class="line">            System.out.println(&quot;finally block i = &quot;+i);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>这里我们在try、catch里强行加上异常语句，打印结果如下：</p>
+<p>Exception in thread “main” java.lang.ArithmeticException: / by zero<br>at tryandcatch.TryAndCatch.testBasic(TryAndCatch.java:25)<br>at tryandcatch.TryAndCatch.main(TryAndCatch.java:45)</p>
+<p>这个提示表示的是finally里的异常信息，也就是说一旦finally里发生异常，try、catch里的异常信息即被消化掉了，也达不到异常信息处理的目的。</p>
+<p>总结以上测试：</p>
+<p>1、finally语句总会执行</p>
+<p>2、如果try、catch中有return语句，finally中没有return，那么在finally中<strong>修改除包装类型和静态变量、全局变量</strong>以外的数据都不会对try、catch中返回的变量有任何的影响（<strong>包装类型、静态变量会改变、全局变量</strong>）</p>
+<p>3、尽量不要在finally中使用return语句，如果使用的话，会忽略try、catch中的返回语句，也会忽略try、catch中的异常，屏蔽了错误的发生</p>
+<p>4、finally中避免再次抛出异常，一旦finally中发生异常，代码执行将会抛出finally中的异常信息，try、catch中的异常将被忽略</p>
+<p><strong>所以在实际项目中，finally常常是用来关闭流或者数据库资源的，并不额外做其他操作。</strong></p>
+<p><strong>另外如果在一个catch块中出现的异常，不会在后面的catch块被捕捉，而是会向上抛出</strong></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/07/LeetCode——整数反转/" itemprop="url">
-              
-                <span itemprop="name">LeetCode————7.整数反转</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-07T00:37:22+08:00"
-              content="2018-12-07" >
-          12-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/06/LeetCode——最长回文子串/" itemprop="url">
-              
-                <span itemprop="name">LeetCode————5.最长回文子串(常考)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-06T17:37:22+08:00"
-              content="2018-12-06" >
-          12-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/04/大数据——淘宝双十一项目实战/" itemprop="url">
-              
-                <span itemprop="name">大数据————淘宝双十一项目实战</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-04T22:30:55+08:00"
-              content="2018-12-04" >
-          12-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/04/大数据——Ubuntu14.04 Echarts图例设置后不显示/" itemprop="url">
-              
-                <span itemprop="name">大数据————Ubuntu14.04 Echarts图例设置后不显示</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-04T22:12:42+08:00"
-              content="2018-12-04" >
-          12-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/04/大数据——Ubuntu14.04 JavaScript array保存object对象/" itemprop="url">
-              
-                <span itemprop="name">大数据————Ubuntu14.04 JavaScript array保存object对象出错</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-04T20:46:46+08:00"
-              content="2018-12-04" >
-          12-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/29/大数据——Ubuntu14.04 使用Sqoop将数据从Hive导入Mysql出错/" itemprop="url">
-              
-                <span itemprop="name">大数据——Ubuntu14.04 使用Sqoop将数据从Hive导入MySQL出错</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-29T21:24:27+08:00"
-              content="2018-11-29" >
-          11-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/27/大数据——Ubuntu14.04安装mysql/" itemprop="url">
-              
-                <span itemprop="name">大数据——Ubuntu14.04 安装mysql</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-27T23:35:14+08:00"
-              content="2018-11-27" >
-          11-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="JJZhang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="JJZhang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/基础知识/" rel="tag"># 基础知识</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/11/LeetCode——不用加减乘除做加法/" rel="next" title="LeetCode————不用加减乘除做加法">
+                <i class="fa fa-chevron-left"></i> LeetCode————不用加减乘除做加法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="page-number" href="/archives/2018/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -696,6 +565,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -930,6 +803,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
