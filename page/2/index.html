@@ -302,6 +302,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/11/RocketMQ在windows配置安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JJZhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JJ❤22">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/11/RocketMQ在windows配置安装/" itemprop="url">RocketMQ在windows配置安装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-11T13:37:22+08:00">
+                2019-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/RocketMQ/" itemprop="url" rel="index">
+                    <span itemprop="name">RocketMQ</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/01/11/RocketMQ在windows配置安装/" class="leancloud_visitors" data-flag-title="RocketMQ在windows配置安装">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>配置过程不麻烦，就是有点小插曲</p>
+<p>教程参考： <a href="https://yq.aliyun.com/articles/656078" target="_blank" rel="noopener">https://yq.aliyun.com/articles/656078</a>   </p>
+<p>​           <a href="https://www.jianshu.com/p/4a275e779afa" target="_blank" rel="noopener">https://www.jianshu.com/p/4a275e779afa</a></p>
+<p><strong>注意：</strong>过程中需要对JVM configuration 修改一下 内存 ： 修改<strong>runserver.sh</strong>和<strong>runbroker.sh</strong>，两个分别对应nameserver和broker的配置：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JAVA_OPT=<span class="string">"<span class="variable">$&#123;JAVA_OPT&#125;</span> -server -Xms2g -Xmx2g -Xmn1g -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> <span class="string">"JAVA_OPT=%JAVA_OPT% -server -Xms2g -Xmx2g -Xmn1g"</span></span><br></pre></td></tr></table></figure>
+<p>另外 如果启动broker出现找不到XXXXX主类的错误，把 %CLASSPATH% 加上双引号，修改为 “%CLASSPATH%” 就可以了</p>
+<p><a href="https://blog.csdn.net/lvwenzhuye/article/details/81483479" target="_blank" rel="noopener">https://blog.csdn.net/lvwenzhuye/article/details/81483479</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/大数据——hashMap的put重复插入问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1735,164 +1895,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/27/大数据——Ubuntu14.04安装mysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JJZhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JJ❤22">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/27/大数据——Ubuntu14.04安装mysql/" itemprop="url">大数据——Ubuntu14.04 安装mysql</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-27T23:35:14+08:00">
-                2018-11-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/大数据/" itemprop="url" rel="index">
-                    <span itemprop="name">大数据</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/11/27/大数据——Ubuntu14.04安装mysql/" class="leancloud_visitors" data-flag-title="大数据——Ubuntu14.04 安装mysql">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>今天用Ubuntu安装mysql遇到了几个小坑，记录一下帮助更多的人避坑。</p>
-<p><strong>安装教程：</strong>Ubuntu安装MySQL及常用操作_厦大数据库实验室博客  <a href="http://dblab.xmu.edu.cn/blog/install-mysql/" target="_blank" rel="noopener">http://dblab.xmu.edu.cn/blog/install-mysql/</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/27/大数据——Ubuntu14.04安装mysql/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1947,7 +1949,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1969,7 +1971,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

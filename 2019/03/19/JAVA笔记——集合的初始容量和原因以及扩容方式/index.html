@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JAVA,集合类," />
 
 
 
@@ -87,16 +87,20 @@
 
 
 
-<meta name="description" content="QQ:339003672WeChat:Zhang_junj">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JJ❤22">
-<meta property="og:url" content="http://yoursite.com/categories/LeetCode/index.html">
+<meta name="description" content="首先：容器包含 Collection集合类（Set、List、Queue） 和 Map，集合类是把对象的集合形式，Map是键值对的映射形式。  需要注意的是LinkedList也有继承Queue接口     初始容量 扩容增量 线程安全性     ArrayList 10 newN=1.5*N+1 不安全   Vector 10 newN=2*N 安全   HashSet 16 newN=2*N(">
+<meta name="keywords" content="JAVA,集合类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA笔记——集合的初始容量和原因以及扩容增量">
+<meta property="og:url" content="http://yoursite.com/2019/03/19/JAVA笔记——集合的初始容量和原因以及扩容方式/index.html">
 <meta property="og:site_name" content="JJ❤22">
-<meta property="og:description" content="QQ:339003672WeChat:Zhang_junj">
+<meta property="og:description" content="首先：容器包含 Collection集合类（Set、List、Queue） 和 Map，集合类是把对象的集合形式，Map是键值对的映射形式。  需要注意的是LinkedList也有继承Queue接口     初始容量 扩容增量 线程安全性     ArrayList 10 newN=1.5*N+1 不安全   Vector 10 newN=2*N 安全   HashSet 16 newN=2*N(">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/464364/201608/464364-20160821093249995-1755279341.jpg">
+<meta property="og:updated_time" content="2019-03-19T16:07:24.220Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JJ❤22">
-<meta name="twitter:description" content="QQ:339003672WeChat:Zhang_junj">
+<meta name="twitter:title" content="JAVA笔记——集合的初始容量和原因以及扩容增量">
+<meta name="twitter:description" content="首先：容器包含 Collection集合类（Set、List、Queue） 和 Map，集合类是把对象的集合形式，Map是键值对的映射形式。  需要注意的是LinkedList也有继承Queue接口     初始容量 扩容增量 线程安全性     ArrayList 10 newN=1.5*N+1 不安全   Vector 10 newN=2*N 安全   HashSet 16 newN=2*N(">
+<meta name="twitter:image" content="https://images2015.cnblogs.com/blog/464364/201608/464364-20160821093249995-1755279341.jpg">
 
 
 
@@ -126,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/LeetCode/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/19/JAVA笔记——集合的初始容量和原因以及扩容方式/"/>
 
 
 
 
 
-  <title>分类: LeetCode | JJ❤22</title>
+  <title>JAVA笔记——集合的初始容量和原因以及扩容增量 | JJ❤22</title>
   
 
 
@@ -151,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     
 	<a href="https://your-url" class="github-corner" aria-label="View source on GitHub">
@@ -287,195 +291,284 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>LeetCode<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/JAVA笔记——集合的初始容量和原因以及扩容方式/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JJZhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JJ❤22">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/02/11/LeetCode——不用加减乘除做加法/" itemprop="url">
-              
-                <span itemprop="name">LeetCode————不用加减乘除做加法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">JAVA笔记——集合的初始容量和原因以及扩容增量</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-02-11T10:37:22+08:00"
-              content="2019-02-11" >
-          02-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-19T22:55:00+08:00">
+                2019-03-19
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/03/19/JAVA笔记——集合的初始容量和原因以及扩容方式/" class="leancloud_visitors" data-flag-title="JAVA笔记——集合的初始容量和原因以及扩容增量">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/16/LeetCode——回文数/" itemprop="url">
-              
-                <span itemprop="name">LeetCode————9.回文数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-16T14:50:22+08:00"
-              content="2018-12-16" >
-          12-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/07/LeetCode——整数反转/" itemprop="url">
-              
-                <span itemprop="name">LeetCode————7.整数反转</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-07T00:37:22+08:00"
-              content="2018-12-07" >
-          12-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/06/LeetCode——最长回文子串/" itemprop="url">
-              
-                <span itemprop="name">LeetCode————5.最长回文子串(常考)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-06T17:37:22+08:00"
-              content="2018-12-06" >
-          12-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/27/LeetCode——两数相加/" itemprop="url">
-              
-                <span itemprop="name">LeetCode————2.两数相加</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-27T10:37:22+08:00"
-              content="2018-11-27" >
-          11-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/08/LeetCode——两数之和/" itemprop="url">
-              
-                <span itemprop="name">LeetCode————1.两数之和</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-08T19:37:22+08:00"
-              content="2018-10-08" >
-          10-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>首先：容器包含 Collection集合类（Set、List、Queue） 和 Map，集合类是把对象的集合形式，Map是键值对的映射形式。</p>
+<p><img src="https://images2015.cnblogs.com/blog/464364/201608/464364-20160821093249995-1755279341.jpg" alt="img"></p>
+<p><strong>需要注意的是LinkedList也有继承Queue接口</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">初始容量</th>
+<th style="text-align:center">扩容增量</th>
+<th style="text-align:center">线程安全性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ArrayList</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">newN=1.5*N+1</td>
+<td style="text-align:center">不安全</td>
+</tr>
+<tr>
+<td style="text-align:center">Vector</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">newN=2*N</td>
+<td style="text-align:center">安全</td>
+</tr>
+<tr>
+<td style="text-align:center">HashSet</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">newN=2*N(装载因子0.75)</td>
+<td style="text-align:center">不安全</td>
+</tr>
+<tr>
+<td style="text-align:center">HashMap</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">newN=2*N(装载因子0.75)</td>
+<td style="text-align:center">不安全</td>
+</tr>
+</tbody>
+</table>
+<p>为什么HashSet和HashMap的初始容量为16呢？这与hash的过程和特点有关。</p>
+<p>首先我们要知道哈希碰撞这个概念，如果两个键值不同的元素hash函数值相同，则意味着两个元素会映射到一个索引下，即发生了碰撞。</p>
+<p>因为把任意长度的字符串变成固定长度的字符串,所以存在一个hash对应多个字符串的情况,所以碰撞必然存在</p>
+<p>为了减少hash值的碰撞,需要实现一个尽量均匀分布的hash函数,在HashMap中通过利用key的hashcode值,来进行位运算<br>公式:index = e.hash &amp; (newCap - 1)</p>
+<p>举例子之前，</p>
+<p>（1）关于String的hashCode()如何计算的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> hash; <span class="comment">// Default to 0</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> h = hash;</span><br><span class="line">        <span class="keyword">if</span> (h == <span class="number">0</span> &amp;&amp; value.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">char</span> val[] = value;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; value.length; i++) &#123;</span><br><span class="line">                h = <span class="number">31</span> * h + val[i];</span><br><span class="line">            &#125;</span><br><span class="line">            hash = h;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> h;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面利用上述方法计算字符串”Lee”的哈希值</p>
+<p>‘L’的ASCII码为76，’e’的ASCII码为101</p>
+<p>for循环3次</p>
+<ol>
+<li>h=31*0+76=76</li>
+<li>h=31*76+101=2457</li>
+<li>h=31*2457+101=76268</li>
+</ol>
+<p>所以字符串”Lee”的哈希码就是76268</p>
+<p>（2）关于均匀散列的方法</p>
+<p>一般对哈希表的散列很自然地会想到用hash值对length取模（即除法散列法），Hashtable中也是这样实现的，这种方法基本能保证元素在哈希表中散列的比较均匀，<strong>但取模会用到除法运算，效率很低，</strong>HashMap中则通过h&amp;(length-1)的方法来代替取模，同样实现了均匀的散列，但效率要高很多，这也是HashMap对Hashtable的一个改进。</p>
+<p><strong>举个例子:</strong><br>1.计算”book”的hashcode<br>十进制 : 3029737<br>二进制 : 101110001110101110 1001</p>
+<p>2.HashMap长度是默认的16，length - 1的结果<br>十进制 : 15<br>二进制 : 1111</p>
+<p>3.把以上两个结果做与运算<br>101110001110101110 1001 &amp; 1111 = 1001<br>1001的十进制 : 9,所以 index=9</p>
+<p>hash算法最终得到的index结果,取决于hashcode值的最后几位</p>
+<p>为了推断HashMap的默认长度为什么是16<br>现在,我们假设HashMap的长度是10,重复刚才的运算步骤:<br>hashcode : 101110001110101110 1001<br>length - 1 : 1001<br>index : 1001</p>
+<p>再换一个hashcode 101110001110101110 1111 试试:<br>hashcode : 101110001110101110 1111<br>length - 1 : 1001<br>index : 1001</p>
+<p>从结果可以看出,虽然hashcode变化了,但是运算的结果都是1001,也就是说,当HashMap长度为10的时候,<strong>有些index结果的出现几率</strong><br><strong>会更大而有些index结果永远不会出现(比如0111),这样就不符合hash均匀分布的原则</strong></p>
+<p><strong>反观长度16或者其他2的幂,length - 1的值是所有二进制位全为1,这种情况下,index的结果等同于hashcode后几位的值</strong><br><strong>只要输入的hashcode本身分布均匀,hash算法的结果就是均匀的</strong></p>
+<p>所以,HashMap的默认长度为16,是<strong>为了降低hash碰撞的几率</strong>。</p>
+<p>参考博客：为什么HashMap集合的初始大小是16？ - 鹤野云间 - CSDN博客<br><a href="https://blog.csdn.net/ocean_java666/article/details/85051694" target="_blank" rel="noopener">https://blog.csdn.net/ocean_java666/article/details/85051694</a></p>
+<p>hashcode冲突的解决方法以及原理分析（收获颇大） - 子爵的博客 - CSDN博客<br><a href="https://blog.csdn.net/zyanyy8023/article/details/81913425" target="_blank" rel="noopener">https://blog.csdn.net/zyanyy8023/article/details/81913425</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="JJZhang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="JJZhang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+          
+            <a href="/tags/集合类/" rel="tag"># 集合类</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/17/JAVA笔记——并发控制机制/" rel="next" title="JAVA笔记——并发控制机制">
+                <i class="fa fa-chevron-left"></i> JAVA笔记——并发控制机制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -483,6 +576,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -717,6 +814,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
