@@ -96,7 +96,7 @@
 <meta property="og:description" content="首先：容器包含 Collection集合类（Set、List、Queue） 和 Map，集合类是把对象的集合形式，Map是键值对的映射形式。  需要注意的是LinkedList也有继承Queue接口     初始容量 扩容增量 线程安全性     ArrayList 10 newN=1.5*N+1 不安全   Vector 10 newN=2*N 安全   HashSet 16 newN=2*N(">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/464364/201608/464364-20160821093249995-1755279341.jpg">
-<meta property="og:updated_time" content="2019-03-19T16:07:24.220Z">
+<meta property="og:updated_time" content="2019-04-18T07:22:15.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA笔记——集合的初始容量和原因以及扩容增量">
 <meta name="twitter:description" content="首先：容器包含 Collection集合类（Set、List、Queue） 和 Map，集合类是把对象的集合形式，Map是键值对的映射形式。  需要注意的是LinkedList也有继承Queue接口     初始容量 扩容增量 线程安全性     ArrayList 10 newN=1.5*N+1 不安全   Vector 10 newN=2*N 安全   HashSet 16 newN=2*N(">
@@ -444,7 +444,7 @@
 </tr>
 </tbody>
 </table>
-<p>为什么HashSet和HashMap的初始容量为16呢？这与hash的过程和特点有关。</p>
+<p>为什么HashSet和HashMap的初始容量为16呢？这与hash的过程和特点有关。<a id="more"></a></p>
 <p>首先我们要知道哈希碰撞这个概念，如果两个键值不同的元素hash函数值相同，则意味着两个元素会映射到一个索引下，即发生了碰撞。</p>
 <p>因为把任意长度的字符串变成固定长度的字符串,所以存在一个hash对应多个字符串的情况,所以碰撞必然存在</p>
 <p>为了减少hash值的碰撞,需要实现一个尽量均匀分布的hash函数,在HashMap中通过利用key的hashcode值,来进行位运算<br>公式:index = e.hash &amp; (newCap - 1)</p>
